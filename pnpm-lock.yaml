@@ -21,11 +21,11 @@ importers:
       vite: ^4.0.4
       vitest: ^0.23.4
     dependencies:
+      '@types/signale': 1.4.4
       signale: 1.4.0
     devDependencies:
       '@bernankez/eslint-config': 0.2.1_7uibuqfxkfaozanbtbziikiqje
       '@types/node': 18.11.18
-      '@types/signale': 1.4.4
       bumpp: 8.2.1
       changelogithub: 0.12.7
       eslint: 8.32.0
@@ -933,7 +933,6 @@ packages:
 
   /@types/node/18.11.18:
     resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==}
-    dev: true
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -953,7 +952,7 @@ packages:
     resolution: {integrity: sha512-VYy4VL64gA4uyUIYVj4tiGFF0VpdnRbJeqNENKGX42toNiTvt83rRzxdr0XK4DR3V01zPM0JQNIsL+IwWWfhsQ==}
     dependencies:
       '@types/node': 18.11.18
-    dev: true
+    dev: false
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}

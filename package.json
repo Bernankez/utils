@@ -49,12 +49,12 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@types/signale": "^1.4.4",
     "signale": "^1.4.0"
   },
   "devDependencies": {
     "@bernankez/eslint-config": "^0.2.1",
     "@types/node": "^18.11.18",
-    "@types/signale": "^1.4.4",
     "bumpp": "^8.2.1",
     "changelogithub": "^0.12.7",
     "eslint": "^8.32.0",
