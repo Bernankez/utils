@@ -1,17 +1,17 @@
 {
-  "name": "ts-template",
+  "name": "@bernankez/utils",
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@7.12.0",
   "description": "",
   "author": "Cole <bernankez@qq.com>",
   "license": "MIT",
-  "homepage": "https://github.com/bernankez/TSTemplate#readme",
+  "homepage": "https://github.com/bernankez/utils#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bernankez/TSTemplate.git"
+    "url": "git+https://github.com/bernankez/utils.git"
   },
-  "bugs": "https://github.com/bernankez/TSTemplate/issues",
+  "bugs": "https://github.com/bernankez/utils/issues",
   "keywords": [],
   "sideEffects": false,
   "exports": {
@@ -39,7 +39,7 @@
     "build": "unbuild",
     "dev": "unbuild --stub",
     "prepublishOnly": "npm run build",
-    "release": "bumpp",
+    "release": "bumpp && npm publish --access public",
     "start": "tsx src/index.ts",
     "taze": "taze",
     "test": "vitest run",
