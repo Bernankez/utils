@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "@types/signale": "^1.4.4",
+    "dayjs": "^1.11.7",
     "signale": "^1.4.0"
   },
   "devDependencies": {
