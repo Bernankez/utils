@@ -54,7 +54,7 @@
     "signale": "^1.4.0"
   },
   "devDependencies": {
-    "@bernankez/eslint-config": "^0.2.1",
+    "@bernankez/eslint-config": "^0.4.3",
     "@types/node": "^18.11.18",
     "bumpp": "^8.2.1",
     "changelogithub": "^0.12.7",
