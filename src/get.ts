@@ -63,3 +63,38 @@ export function getYearDiff(before: string, after = dayjs().format("YYYY-MM-DD")
   }
   return diff;
 }
+
+export type Platform = "AIX" | "Darwin" | "FreeBSD" | "Android" | "Linux" | "OpenBSD" | "SunOS" | "Win32" | "unknown";
+/**
+ * * `AIX` - IBM AIX platform
+ * * `Darwin` - Darwin platform (MacOS, IOS etc)
+ * * `FreeBSD` - FreeBSD platform
+ * * `Android` - Android platform
+ * * `Linux` - Linux platform
+ * * `OpenBSD` - OpenBSD platform
+ * * `SunOS` - SunOS platform
+ * * `Win32` - Windows platform
+ * * `unknown` - unknown platform
+ */
+export function getPlatform() {
+  switch (process.platform) {
+    case "aix":
+      return "AIX";
+    case "darwin":
+      return "Darwin";
+    case "freebsd":
+      return "FreeBSD";
+    case "android":
+      return "Android";
+    case "linux":
+      return "Linux";
+    case "openbsd":
+      return "OpenBSD";
+    case "sunos":
+      return "SunOS";
+    case "win32":
+      return "Win32";
+    default:
+      return "unknown";
+  }
+}
