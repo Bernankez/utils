@@ -37,7 +37,7 @@ describe("getInfoByIDNumber", () => {
       valid: true,
       sex: "male",
       birthday: "1990-03-07",
-      age: 32,
+      age: 33,
     });
   });
 
@@ -46,7 +46,7 @@ describe("getInfoByIDNumber", () => {
       valid: true,
       sex: "male",
       birthday: "1990-03-07",
-      age: 32,
+      age: 33,
     });
   });
 
@@ -55,7 +55,7 @@ describe("getInfoByIDNumber", () => {
       valid: true,
       sex: "male",
       birthday: "2004-02-29",
-      age: 18,
+      age: 19,
     });
   });
 });
