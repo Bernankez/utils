@@ -2,17 +2,23 @@
   "name": "@bernankez/utils",
   "type": "module",
   "version": "0.2.2",
-  "packageManager": "pnpm@8.4.0",
-  "description": "",
-  "author": "Cole <bernankez@qq.com>",
+  "packageManager": "pnpm@8.9.0",
+  "description": "Cole's utils preset",
+  "author": {
+    "name": "Cole",
+    "email": "bernankeic@gmail.com",
+    "url": "https://github.com/Bernankez"
+  },
   "license": "MIT",
-  "homepage": "https://github.com/bernankez/utils#readme",
+  "homepage": "https://github.com/Bernankez/utils#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bernankez/utils.git"
+    "url": "git+https://github.com/Bernankez/utils.git"
   },
-  "bugs": "https://github.com/bernankez/utils/issues",
-  "keywords": [],
+  "bugs": "https://github.com/Bernankez/utils/issues",
+  "keywords": [
+    "utils"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {
@@ -36,41 +42,57 @@
     "dist"
   ],
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "simple-git-hooks",
+    "prepublishOnly": "pnpm build",
+    "dev": "unbuild --stub && pnpm docs:dev",
     "build": "unbuild",
-    "dev": "unbuild --stub",
-    "prepublishOnly": "npm run build",
-    "release": "bumpp && npm publish --access public",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs --force",
+    "docs:preview": "vitepress preview docs",
     "start": "tsx src/index.ts",
-    "taze": "taze",
+    "watch": "tsx watch src/index.ts",
+    "release": "bumpp && pnpm publish",
     "test": "vitest run",
-    "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint .",
-    "fix": "eslint --fix .",
-    "prepare": "husky install"
+    "lint": "eslint . && stylelint \"**/*.{css,vue}\" \"!.vitepress\"",
+    "fix": "eslint . --fix &&  stylelint \"**/*.{css,vue}\" \"docs/.vitepress/**/*.{css,vue}\" \"!docs/.vitepress/cache\" \"!docs/.vitepress/dist\" --fix"
   },
-  "dependencies": {
-    "@types/signale": "^1.4.4",
-    "dayjs": "^1.11.7",
-    "signale": "^1.4.0"
+  "peerDependencies": {
+    "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@bernankez/eslint-config": "^0.4.3",
-    "@types/node": "^18.11.18",
-    "bumpp": "^8.2.1",
-    "changelogithub": "^0.12.7",
-    "eslint": "^8.32.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.1.0",
-    "rimraf": "^3.0.2",
-    "taze": "^0.8.5",
-    "tsx": "^3.12.2",
-    "typescript": "^4.9.4",
-    "unbuild": "^0.8.11",
-    "vite": "^4.0.4",
-    "vitest": "^0.23.4"
+    "@bernankez/eslint-config": "^0.7.1",
+    "@bernankez/eslint-config-unocss": "^0.7.1",
+    "@bernankez/stylelint-config": "^0.4.4",
+    "@iconify/json": "^2.2.128",
+    "@types/node": "^20.8.4",
+    "bumpp": "^9.2.0",
+    "eslint": "^8.51.0",
+    "lint-staged": "^14.0.1",
+    "rimraf": "^5.0.5",
+    "simple-git-hooks": "^2.9.0",
+    "stylelint": "^15.10.3",
+    "tsx": "^3.13.0",
+    "typescript": "^5.2.2",
+    "unbuild": "^2.0.0",
+    "unocss": "^0.56.5",
+    "vite": "^4.4.11",
+    "vitepress": "1.0.0-rc.20",
+    "vitest": "^0.34.6",
+    "vue": "^3.3.4"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "*": "eslint --fix"
+    "*": [
+      "eslint --fix",
+      "pnpm typecheck",
+      "pnpm test"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -8,6 +8,7 @@ import { fileURLToPath } from "node:url";
 export function resolvePath(url: string) {
   const __filename = fileURLToPath(url);
   const __dirname = dirname(__filename);
+  const root = process.cwd();
 
-  return { __filename, __dirname };
+  return { __filename, __dirname, root };
 }

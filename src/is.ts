@@ -11,7 +11,7 @@ export const isObject = (val: any): val is object =>
   toString.call(val) === "[object Object]";
 export const isWindow = (val: any): val is Window => typeof window !== "undefined" && toString.call(val) === "[object Window]";
 
-export const isIOS = /* #__PURE__ */ isClient && window?.navigator?.userAgent && /iP(ad|hone|od)/.test(window.navigator.userAgent);
+export const isIOS = isClient && window?.navigator?.userAgent && /iP(ad|hone|od)/.test(window.navigator.userAgent);
 
 const provinces = ["11", "12", "13", "14", "15", "21", "22", "23", "31", "32", "33", "34", "35", "36", "37", "41", "42", "43", "44", "45", "46", "50", "51", "52", "53", "54", "61", "62", "63", "64", "65", "71", "81", "82", "91"];
 export const isIDNumber = (idNumber: string) => {

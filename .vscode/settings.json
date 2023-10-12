@@ -1,0 +1,10 @@
+{
+  "references.preferredLocation": "peek",
+  "[markdown]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  }
+}
