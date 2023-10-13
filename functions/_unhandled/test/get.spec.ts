@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getInfoByIDNumber, getYearDiff } from "../src";
+import { getInfoByIDNumber, getYearDiff } from "../functions";
 
 describe("getYearDiff", () => {
   it("normal birthday", () => {

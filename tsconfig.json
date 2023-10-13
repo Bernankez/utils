@@ -12,11 +12,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
+      "@/*": ["functions/*"],
       "~/*": ["./*"],
-      "@bernankez/utils": ["src/index.ts"]
+      "@bernankez/utils": ["functions/index.ts"]
     }
   },
-  "include": ["src/**/*.ts", "test/**/*.ts", "docs/**/*.md", "docs/**/*.ts", "docs/**/*.vue"],
+  "include": ["functions/**/*.ts", "metadata/**/*.ts", "**/*.md", ".vitepress/**/*.ts", ".vitepress/**/*.vue"],
   "exclude": ["dist"]
 }

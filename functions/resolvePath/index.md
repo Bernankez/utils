@@ -1,3 +1,7 @@
+---
+category: Alternative
+---
+
 # resolvePath
 
 CommonJS paths polyfill for esm.
@@ -11,4 +15,6 @@ const { __dirname, __filename, root } = resolvePath(import.meta.url);
 ```
 
 ## Source
+
+[Source](./index.ts)
 

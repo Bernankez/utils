@@ -3,7 +3,7 @@ import { defineBuildConfig } from "unbuild";
 
 export default defineBuildConfig({
   entries: [
-    "src/index",
+    "functions/index",
   ],
   declaration: true,
   clean: true,
@@ -11,7 +11,7 @@ export default defineBuildConfig({
     emitCJS: true,
   },
   alias: {
-    "@": resolve(__dirname, "./src"),
+    "@": resolve(__dirname, "./functions"),
     "*": __dirname,
   },
 });

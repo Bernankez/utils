@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { desensitization } from "../src";
+import { desensitization } from "../functions";
 
 const char = "1234567890abcdef";
 

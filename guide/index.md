@@ -14,6 +14,14 @@ $ npm add @bernankez/utils
 ```bash [pnpm]
 $ pnpm add @bernankez/utils
 ```
+
+```bash [yarn]
+$ yarn add @bernankez/utils
+```
+
+```bash [bun]
+$ bun add @bernankez/utils
+```
 :::
 
 ## Usage

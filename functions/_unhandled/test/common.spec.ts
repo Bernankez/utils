@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { hasOwn } from "../src";
+import { hasOwn } from "../functions";
 
 describe("common", () => {
   it("should be true", () => {

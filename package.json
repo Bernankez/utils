@@ -47,19 +47,29 @@
     "prepublishOnly": "pnpm build",
     "dev": "unbuild --stub && pnpm docs:dev",
     "build": "unbuild",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs --force",
-    "docs:preview": "vitepress preview docs",
-    "start": "tsx src/index.ts",
-    "watch": "tsx watch src/index.ts",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build --force",
+    "docs:preview": "vitepress preview",
+    "update": "tsx metadata/update.ts",
+    "start": "tsx functions/index.ts",
+    "watch": "tsx watch functions/index.ts",
     "release": "bumpp && pnpm publish",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint . && stylelint \"**/*.{css,vue}\" \"!.vitepress\"",
-    "fix": "eslint . --fix &&  stylelint \"**/*.{css,vue}\" \"docs/.vitepress/**/*.{css,vue}\" \"!docs/.vitepress/cache\" \"!docs/.vitepress/dist\" --fix"
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "eslint . && stylelint \"**/*.{css,vue}\" \".vitepress/**/*.{css,vue}\" \"!.vitepress/cache\" \"!.vitepress/dist\"",
+    "fix": "eslint . --fix && stylelint \"**/*.{css,vue}\" \".vitepress/**/*.{css,vue}\" \"!.vitepress/cache\" \"!.vitepress/dist\" --fix"
   },
   "peerDependencies": {
-    "vue": "^3.3.4"
+    "@vue/composition-api": "^1.0.0-rc.1",
+    "vue": "^2.0.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "vue-demi": "latest"
   },
   "devDependencies": {
     "@bernankez/eslint-config": "^0.7.1",
@@ -69,8 +79,10 @@
     "@types/node": "^20.8.4",
     "bumpp": "^9.2.0",
     "eslint": "^8.51.0",
+    "gray-matter": "^4.0.3",
     "lint-staged": "^14.0.1",
     "rimraf": "^5.0.5",
+    "simple-git": "^3.20.0",
     "simple-git-hooks": "^2.9.0",
     "stylelint": "^15.10.3",
     "tsx": "^3.13.0",
@@ -80,7 +92,8 @@
     "vite": "^4.4.11",
     "vitepress": "1.0.0-rc.20",
     "vitest": "^0.34.6",
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "vue-tsc": "^1.8.19"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
