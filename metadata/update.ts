@@ -11,11 +11,10 @@ const DOC_URL = "https://utils.keke.cc/";
 const GITHUB_REPO = "https://github.com/Bernankez/utils/blob/master/";
 const git = Git(DIR_ROOT);
 
-const fileMap = {
-  test: "index.test.ts",
-  doc: "index.md",
+const defaultNames = {
   demo: "demo.vue",
-} as const;
+  test: "index.test.ts",
+};
 
 export interface UtilFunction {
   /** Relative path to project root */
@@ -25,11 +24,18 @@ export interface UtilFunction {
   /** Category */
   category?: string;
   lastUpdated: number;
+  /** File names */
+  file: {
+    file: string;
+    doc: string;
+    test?: string;
+    demo?: string;
+  };
   /** Source url for function */
   source: {
     file: string;
+    doc: string;
     test?: string;
-    doc?: string;
     demo?: string;
   };
   url: {
@@ -42,46 +48,69 @@ async function readFunctionMetadata() {
   const functions: UtilFunction[] = [];
   for (const name of functionNames) {
     if (!name.startsWith("_") && !name.startsWith(".")) {
-      const path = resolve(DIR_FUNCTION, name);
-      const stat = statSync(path);
+      const dirPath = join(DIR_FUNCTION, name);
+      const stat = statSync(dirPath);
 
       if (stat.isDirectory()) {
-        const relativePath = normalizePath(relative(DIR_ROOT, path));
-        const filePath = join(relativePath, "index.ts");
+        const relativeDirPath = relative(DIR_ROOT, dirPath);
+        const tsPath = join(dirPath, "index.ts");
 
-        if (!existsSync(filePath)) {
+        if (!existsSync(tsPath)) {
+          continue;
+        }
+
+        const docPath = join(dirPath, "index.md");
+        const doc = readFileSync(docPath, "utf-8");
+
+        if (!doc) {
+          console.warn(`[metadata update] ${name} doc not found, ignored!`);
           continue;
         }
 
         const func: UtilFunction = {
-          path: relativePath,
+          path: normalizePath(relativeDirPath),
           name,
           // convert to number
-          lastUpdated: +await git.raw(["log", "-1", "--format=%at", filePath]) * 1000,
+          lastUpdated: +await git.raw(["log", "-1", "--format=%at", tsPath]) * 1000,
+          file: {
+            file: "index.ts",
+            doc: "index.md",
+          },
           source: {
-            file: GITHUB_REPO + normalizePath(filePath),
+            file: GITHUB_REPO + normalizePath(relative(DIR_ROOT, tsPath)),
+            doc: GITHUB_REPO + normalizePath(relative(DIR_ROOT, docPath)),
           },
           url: {
-            doc: `${DOC_URL + relativePath}/`,
+            doc: `${DOC_URL + relativeDirPath}/`,
           },
         };
 
-        // test demo doc
-        const childrenNames = readdirSync(path, "utf-8");
-        for (const _key in fileMap) {
-          const key = _key as keyof typeof fileMap;
-          if (childrenNames.includes(fileMap[key])) {
-            func.source[key] = GITHUB_REPO + normalizePath(join(relativePath, fileMap[key]));
-          }
+        const { data = {} } = matter(doc);
+        const { demo, test, category } = data;
+
+        if (category) {
+          func.category = data.category;
         }
 
-        // category
-        const doc = readFileSync(join(path, "./index.md"), "utf-8");
-        if (doc) {
-          const { data } = matter(doc);
-          if (data.category) {
-            func.category = data.category;
+        // test demo doc
+        const childrenNames = readdirSync(dirPath, "utf-8");
+        const names = { demo, test };
+        for (const _key in names) {
+          const key = _key as keyof typeof names;
+          // specified file name but not found
+          if (names[key] !== undefined && !childrenNames.includes(names[key])) {
+            console.warn(`[metadata update] ${name} requires ${key}, but file not found`);
+            continue;
           }
+          const value = names[key] ?? defaultNames[key];
+
+          if (names[key] === false || !childrenNames.includes(value)) {
+            continue;
+          }
+
+          func.file[key] = value;
+
+          func.source[key] = GITHUB_REPO + normalizePath(join(relativeDirPath, value));
         }
 
         functions.push(func);

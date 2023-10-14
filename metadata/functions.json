@@ -3,10 +3,15 @@
     "path": "functions/isDefined",
     "name": "isDefined",
     "lastUpdated": 1697192021000,
+    "file": {
+      "file": "index.ts",
+      "doc": "index.md",
+      "test": "index.test.ts"
+    },
     "source": {
       "file": "https://github.com/Bernankez/utils/blob/master/functions/isDefined/index.ts",
-      "test": "https://github.com/Bernankez/utils/blob/master/functions/isDefined/index.test.ts",
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/isDefined/index.md"
+      "doc": "https://github.com/Bernankez/utils/blob/master/functions/isDefined/index.md",
+      "test": "https://github.com/Bernankez/utils/blob/master/functions/isDefined/index.test.ts"
     },
     "url": {
       "doc": "https://utils.keke.cc/functions/isDefined/"
@@ -17,10 +22,15 @@
     "path": "functions/isNumber",
     "name": "isNumber",
     "lastUpdated": 1697192021000,
+    "file": {
+      "file": "index.ts",
+      "doc": "index.md",
+      "test": "index.test.ts"
+    },
     "source": {
       "file": "https://github.com/Bernankez/utils/blob/master/functions/isNumber/index.ts",
-      "test": "https://github.com/Bernankez/utils/blob/master/functions/isNumber/index.test.ts",
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/isNumber/index.md"
+      "doc": "https://github.com/Bernankez/utils/blob/master/functions/isNumber/index.md",
+      "test": "https://github.com/Bernankez/utils/blob/master/functions/isNumber/index.test.ts"
     },
     "url": {
       "doc": "https://utils.keke.cc/functions/isNumber/"
@@ -31,6 +41,11 @@
     "path": "functions/masking",
     "name": "masking",
     "lastUpdated": 1697192021000,
+    "file": {
+      "file": "index.ts",
+      "doc": "index.md",
+      "demo": "demo.vue"
+    },
     "source": {
       "file": "https://github.com/Bernankez/utils/blob/master/functions/masking/index.ts",
       "doc": "https://github.com/Bernankez/utils/blob/master/functions/masking/index.md",
@@ -45,6 +60,11 @@
     "path": "functions/resolvePath",
     "name": "resolvePath",
     "lastUpdated": 1697192021000,
+    "file": {
+      "file": "index.ts",
+      "doc": "index.md",
+      "demo": "demo.vue"
+    },
     "source": {
       "file": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.ts",
       "doc": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.md",
