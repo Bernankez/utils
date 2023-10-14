@@ -7,6 +7,7 @@ import Git from "simple-git";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIR_ROOT = resolve(__dirname, "..");
 const DIR_FUNCTION = resolve(DIR_ROOT, "./functions");
+const DOC_URL = "https://utils.keke.cc/";
 const GITHUB_REPO = "https://github.com/Bernankez/utils/blob/master/";
 const git = Git(DIR_ROOT);
 
@@ -31,6 +32,9 @@ export interface UtilFunction {
     doc?: string;
     demo?: string;
   };
+  url: {
+    doc: string;
+  };
 }
 
 async function readFunctionMetadata() {
@@ -38,11 +42,11 @@ async function readFunctionMetadata() {
   const functions: UtilFunction[] = [];
   for (const name of functionNames) {
     if (!name.startsWith("_") && !name.startsWith(".")) {
-      const path = join(DIR_FUNCTION, name);
+      const path = resolve(DIR_FUNCTION, name);
       const stat = statSync(path);
 
       if (stat.isDirectory()) {
-        const relativePath = relative(DIR_ROOT, path);
+        const relativePath = normalizePath(relative(DIR_ROOT, path));
         const filePath = join(relativePath, "index.ts");
 
         if (!existsSync(filePath)) {
@@ -55,7 +59,10 @@ async function readFunctionMetadata() {
           // convert to number
           lastUpdated: +await git.raw(["log", "-1", "--format=%at", filePath]) * 1000,
           source: {
-            file: GITHUB_REPO + filePath,
+            file: GITHUB_REPO + normalizePath(filePath),
+          },
+          url: {
+            doc: `${DOC_URL + relativePath}/`,
           },
         };
 
@@ -64,7 +71,7 @@ async function readFunctionMetadata() {
         for (const _key in fileMap) {
           const key = _key as keyof typeof fileMap;
           if (childrenNames.includes(fileMap[key])) {
-            func.source[key] = GITHUB_REPO + join(relativePath, fileMap[key]);
+            func.source[key] = GITHUB_REPO + normalizePath(join(relativePath, fileMap[key]));
           }
         }
 
@@ -82,6 +89,10 @@ async function readFunctionMetadata() {
     }
   }
   return functions;
+}
+
+function normalizePath(path: string) {
+  return path.replace(/\\/g, "/");
 }
 
 async function run() {

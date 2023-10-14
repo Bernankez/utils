@@ -4,6 +4,7 @@ import type { DefaultTheme } from "vitepress";
 import { defineConfig } from "vitepress";
 import UnoCSS from "unocss/vite";
 import functions from "../metadata/functions.json";
+import { markdownTransform } from "./plugins/markdownTransform";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIR_ROOT = resolve(__dirname, "..");
@@ -16,12 +17,10 @@ const categoriesOrder = [
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  lang: "en-US",
   title: "Cole's Utils",
   titleTemplate: ":title · utils",
   description: "Cole's utils preset",
-  rewrites: {
-    "../functions/resolvePath/index.md": "functions/resolvePath",
-  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -47,9 +46,15 @@ export default defineConfig({
     socialLinks: [
       { icon: "github", link: "https://github.com/Bernankez/utils" },
     ],
+    search: {
+      provider: "local",
+    },
+    // editLink: {
+    //   pattern: "https://github.com/Bernankez/utils/blob/master/:path",
+    // },
   },
   vite: {
-    plugins: [UnoCSS()],
+    plugins: [UnoCSS(), markdownTransform()],
     resolve: {
       alias: {
         "@/*": join(DIR_ROOT, "./functions"),

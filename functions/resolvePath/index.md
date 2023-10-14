@@ -14,7 +14,4 @@ import { resolvePath } from "@bernankez/utils";
 const { __dirname, __filename, root } = resolvePath(import.meta.url);
 ```
 
-## Source
-
-[Source](./index.ts)
 

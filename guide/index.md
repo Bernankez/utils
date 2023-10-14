@@ -1,7 +1,7 @@
 # Getting Started
 
 ::: warning
-🚧 This library is still under development. Any APIs may change without notification. Use at your own risk.
+🚧 This library is still under development. Any APIs may change without notification. Use at your own risk. 🚧
 :::
 
 ## Installation

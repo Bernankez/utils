@@ -2,44 +2,56 @@
   {
     "path": "functions/isDefined",
     "name": "isDefined",
-    "lastUpdated": 0,
+    "lastUpdated": 1697192021000,
     "source": {
       "file": "https://github.com/Bernankez/utils/blob/master/functions/isDefined/index.ts",
       "test": "https://github.com/Bernankez/utils/blob/master/functions/isDefined/index.test.ts",
       "doc": "https://github.com/Bernankez/utils/blob/master/functions/isDefined/index.md"
+    },
+    "url": {
+      "doc": "https://utils.keke.cc/functions/isDefined/"
     },
     "category": "Validate"
   },
   {
     "path": "functions/isNumber",
     "name": "isNumber",
-    "lastUpdated": 0,
+    "lastUpdated": 1697192021000,
     "source": {
       "file": "https://github.com/Bernankez/utils/blob/master/functions/isNumber/index.ts",
       "test": "https://github.com/Bernankez/utils/blob/master/functions/isNumber/index.test.ts",
       "doc": "https://github.com/Bernankez/utils/blob/master/functions/isNumber/index.md"
+    },
+    "url": {
+      "doc": "https://utils.keke.cc/functions/isNumber/"
     },
     "category": "Validate"
   },
   {
     "path": "functions/masking",
     "name": "masking",
-    "lastUpdated": 0,
+    "lastUpdated": 1697192021000,
     "source": {
       "file": "https://github.com/Bernankez/utils/blob/master/functions/masking/index.ts",
       "doc": "https://github.com/Bernankez/utils/blob/master/functions/masking/index.md",
       "demo": "https://github.com/Bernankez/utils/blob/master/functions/masking/demo.vue"
+    },
+    "url": {
+      "doc": "https://utils.keke.cc/functions/masking/"
     },
     "category": "String"
   },
   {
     "path": "functions/resolvePath",
     "name": "resolvePath",
-    "lastUpdated": 0,
+    "lastUpdated": 1697192021000,
     "source": {
       "file": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.ts",
       "doc": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.md",
       "demo": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/demo.vue"
+    },
+    "url": {
+      "doc": "https://utils.keke.cc/functions/resolvePath/"
     },
     "category": "Alternative"
   }
