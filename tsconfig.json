@@ -14,7 +14,9 @@
     "paths": {
       "@/*": ["functions/*"],
       "~/*": ["./*"],
-      "@bernankez/utils": ["functions/index.ts"]
+      "@bernankez/utils": ["functions/index.ts"],
+      "@bernankez/utils/node": ["functions/node.ts"],
+      "@bernankez/utils/browser": ["functions/browser.ts"]
     }
   },
   "include": ["functions/**/*.ts", "metadata/**/*.ts", "**/*.md", ".vitepress/**/*.ts", ".vitepress/**/*.vue"],

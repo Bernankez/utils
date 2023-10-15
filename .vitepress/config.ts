@@ -49,17 +49,16 @@ export default defineConfig({
     search: {
       provider: "local",
     },
-    // editLink: {
-    //   pattern: "https://github.com/Bernankez/utils/blob/master/:path",
-    // },
   },
   vite: {
     plugins: [UnoCSS(), markdownTransform()],
     resolve: {
       alias: {
-        "@/*": join(DIR_ROOT, "./functions"),
-        "~/*": join(DIR_ROOT, "./"),
+        "@": join(DIR_ROOT, "./functions"),
+        "~": join(DIR_ROOT, "./"),
         "@bernankez/utils": join(DIR_ROOT, "./functions"),
+        "@bernankez/utils/node": join(DIR_ROOT, "./functions/node.ts"),
+        "@bernankez/utils/browser": join(DIR_ROOT, "./functions/browser.ts"),
       },
     },
   },
