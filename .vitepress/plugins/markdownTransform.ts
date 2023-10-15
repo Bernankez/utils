@@ -1,10 +1,11 @@
 import type { Plugin } from "vitepress";
 import functions from "../../metadata/functions.json";
+import type { UtilFunction } from "~/metadata/update";
 
 const functionNames = functions.map(func => func.name);
 
 function getFunction(name: string) {
-  return functions.find(func => func.name === name)!;
+  return functions.find(func => func.name === name)! as UtilFunction;
 }
 
 export function markdownTransform(): Plugin {
@@ -31,11 +32,15 @@ export function markdownTransform(): Plugin {
       // convert links to relative
       code = code.replace(/https?:\/\/utils\.keke\.cc\//g, "/");
 
-      // add demo
-
       const paths = id.split("/");
       const name = paths.at(-2)!;
       const i = paths.at(-1)!;
+
+      if (!id.includes("functions/")) {
+        // not function folder, skip demo transform
+        return null;
+      }
+
       if (!functionNames.includes(name)) {
         console.warn(`Function ${name} mismatched, run \`pnpm run update\` first.`);
       } else if (i === "index.md") {
@@ -43,6 +48,8 @@ export function markdownTransform(): Plugin {
         const firstHeader = code.search(/\n#{2,6}\s.+/);
         const sliceIndex = firstHeader < 0 ? frontmatterEnds < 0 ? 0 : frontmatterEnds + 4 : firstHeader;
         const func = getFunction(name);
+
+        let header = "";
         const demoPath = func.file.demo;
         if (demoPath) {
           const demoSection = `
@@ -52,16 +59,31 @@ import Demo from "./${demoPath}";
 
 ## Demo
 
-<div>
-Demo
+<DemoWrapper source=${func.source.demo}>
   <Demo />
-</div>
-          `;
-          code = code.slice(0, sliceIndex) + demoSection + code.slice(sliceIndex);
+</DemoWrapper>
+`;
+          header += demoSection;
         }
-      }
+        code = code.slice(0, sliceIndex) + header + code.slice(sliceIndex);
 
-      // add source
+        const source = func.source;
+        const footer = `
+## Source
+
+${[
+  source.index ? ["Source", source.index] : undefined,
+  source.browser ? ["Source(Browser)", source.browser] : undefined,
+  source.node ? ["Source(Node)", source.node] : undefined,
+  source.demo ? ["Demo", source.demo] : undefined,
+  source.doc ? ["Docs", source.doc] : undefined,
+].filter(item => !!item).map(src => `<a href="${src![1]}" target="_blank" style="text-decoration: none">${src![0]}</a>`)
+          .join(" • ")}
+`;
+        code += footer;
+
+        code = code.replace(/(# \w+?)\n/, `$1\n\n<FunctionInfo fn="${name}"/>\n`);
+      }
 
       return code;
     },

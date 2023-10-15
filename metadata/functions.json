@@ -2,14 +2,16 @@
   {
     "path": "functions/isDefined",
     "name": "isDefined",
-    "lastUpdated": 1697192021000,
+    "lastUpdated": {
+      "index": 1697192021000
+    },
     "file": {
-      "file": "index.ts",
       "doc": "index.md",
+      "index": "index.ts",
       "test": "index.test.ts"
     },
     "source": {
-      "file": "https://github.com/Bernankez/utils/blob/master/functions/isDefined/index.ts",
+      "index": "https://github.com/Bernankez/utils/blob/master/functions/isDefined/index.ts",
       "doc": "https://github.com/Bernankez/utils/blob/master/functions/isDefined/index.md",
       "test": "https://github.com/Bernankez/utils/blob/master/functions/isDefined/index.test.ts"
     },
@@ -21,14 +23,16 @@
   {
     "path": "functions/isNumber",
     "name": "isNumber",
-    "lastUpdated": 1697192021000,
+    "lastUpdated": {
+      "index": 1697192021000
+    },
     "file": {
-      "file": "index.ts",
       "doc": "index.md",
+      "index": "index.ts",
       "test": "index.test.ts"
     },
     "source": {
-      "file": "https://github.com/Bernankez/utils/blob/master/functions/isNumber/index.ts",
+      "index": "https://github.com/Bernankez/utils/blob/master/functions/isNumber/index.ts",
       "doc": "https://github.com/Bernankez/utils/blob/master/functions/isNumber/index.md",
       "test": "https://github.com/Bernankez/utils/blob/master/functions/isNumber/index.test.ts"
     },
@@ -40,14 +44,16 @@
   {
     "path": "functions/masking",
     "name": "masking",
-    "lastUpdated": 1697192021000,
+    "lastUpdated": {
+      "index": 1697192021000
+    },
     "file": {
-      "file": "index.ts",
       "doc": "index.md",
+      "index": "index.ts",
       "demo": "demo.vue"
     },
     "source": {
-      "file": "https://github.com/Bernankez/utils/blob/master/functions/masking/index.ts",
+      "index": "https://github.com/Bernankez/utils/blob/master/functions/masking/index.ts",
       "doc": "https://github.com/Bernankez/utils/blob/master/functions/masking/index.md",
       "demo": "https://github.com/Bernankez/utils/blob/master/functions/masking/demo.vue"
     },
@@ -59,16 +65,19 @@
   {
     "path": "functions/resolvePath",
     "name": "resolvePath",
-    "lastUpdated": 1697192021000,
+    "lastUpdated": {
+      "node": 1697336534000,
+      "browser": 0
+    },
     "file": {
-      "file": "index.ts",
       "doc": "index.md",
-      "demo": "demo.vue"
+      "node": "index.node.ts",
+      "browser": "index.browser.ts"
     },
     "source": {
-      "file": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.ts",
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.md",
-      "demo": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/demo.vue"
+      "node": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.node.ts",
+      "browser": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.browser.ts",
+      "doc": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.md"
     },
     "url": {
       "doc": "https://utils.keke.cc/functions/resolvePath/"
