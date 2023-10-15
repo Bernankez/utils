@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isIDNumber } from "../functions";
+import { isIDNumber } from "..";
 
 describe("isIDNumber", () => {
   it("with ending 'X'", () => {

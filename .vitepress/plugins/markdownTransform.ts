@@ -36,7 +36,7 @@ export function markdownTransform(): Plugin {
       const name = paths.at(-2)!;
       const i = paths.at(-1)!;
 
-      if (!id.includes("functions/")) {
+      if (!id.includes("functions/") || id.includes("functions/index.md")) {
         // not function folder, skip demo transform
         return null;
       }

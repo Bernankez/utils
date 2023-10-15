@@ -31,9 +31,9 @@ Importing the functions you need from `@bernankez/utils`
 ```ts
 import { masking } from "@bernankez/utils";
 
-const email = "bernankeic@gmail.com";
-const maskedEmail = masking(email, [2, -3]);
-console.log(maskedEmail); // be*************com
+const pkg = "@bernankez/utils";
+const pkg = masking(pkg, [3, -3]);
+console.log(pkg); // @be**********ils
 ```
 
 See all functions [HERE](/functions/).

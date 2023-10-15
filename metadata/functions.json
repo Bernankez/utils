@@ -50,12 +50,14 @@
     "file": {
       "doc": "index.md",
       "index": "index.ts",
-      "demo": "demo.vue"
+      "demo": "demo.vue",
+      "test": "index.test.ts"
     },
     "source": {
       "index": "https://github.com/Bernankez/utils/blob/master/functions/masking/index.ts",
       "doc": "https://github.com/Bernankez/utils/blob/master/functions/masking/index.md",
-      "demo": "https://github.com/Bernankez/utils/blob/master/functions/masking/demo.vue"
+      "demo": "https://github.com/Bernankez/utils/blob/master/functions/masking/demo.vue",
+      "test": "https://github.com/Bernankez/utils/blob/master/functions/masking/index.test.ts"
     },
     "url": {
       "doc": "https://utils.keke.cc/functions/masking/"

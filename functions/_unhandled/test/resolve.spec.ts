@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { getPlatform, resolvePath } from "../functions";
+import { resolvePath } from "@bernankez/utils/node";
+import { getPlatform } from "..";
 
 const isWindows = getPlatform() === "Win32";
 
