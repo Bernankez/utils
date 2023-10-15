@@ -66,17 +66,14 @@
     "path": "functions/resolvePath",
     "name": "resolvePath",
     "lastUpdated": {
-      "node": 1697336534000,
-      "browser": 0
+      "node": 1697336534000
     },
     "file": {
       "doc": "index.md",
-      "node": "index.node.ts",
-      "browser": "index.browser.ts"
+      "node": "index.node.ts"
     },
     "source": {
       "node": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.node.ts",
-      "browser": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.browser.ts",
       "doc": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.md"
     },
     "url": {

@@ -21,6 +21,7 @@ export default defineConfig({
   title: "Cole's Utils",
   titleTemplate: ":title · utils",
   description: "Cole's utils preset",
+  head: [["link", { rel: "icon", href: "/package.svg" }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -49,6 +50,7 @@ export default defineConfig({
     search: {
       provider: "local",
     },
+    logo: "/package.svg",
   },
   vite: {
     plugins: [UnoCSS(), markdownTransform()],

@@ -6,6 +6,9 @@ hero:
   name: "@bernankez/utils"
   text: "Cole's utils preset"
   tagline: Using utils out-of-the-box
+  image:
+    src: /package.svg
+    alt: Logo
   actions:
     - theme: brand
       text: Getting Started
