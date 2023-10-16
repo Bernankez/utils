@@ -144,7 +144,7 @@ async function readFunctionMetadata() {
 
 async function run() {
   const functions = await readFunctionMetadata();
-  writeFileSync(join(__dirname, "./functions.json"), JSON.stringify(functions, null, 2), "utf-8");
+  writeFileSync(join(__dirname, "./functions.json"), `${JSON.stringify(functions, null, 2)}\n`, "utf-8");
 }
 
 run();

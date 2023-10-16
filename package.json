@@ -58,7 +58,7 @@
     "dev": "unbuild --stub && pnpm docs:dev",
     "build": "pnpm run update && unbuild",
     "docs:dev": "pnpm run update && vitepress dev",
-    "docs:build": "vitepress build --force",
+    "docs:build": "pnpm run update && vitepress build --force",
     "docs:preview": "vitepress preview",
     "update": "tsx metadata/update.ts",
     "start": "tsx functions/index.ts",
