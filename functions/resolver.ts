@@ -8,16 +8,25 @@ function getFunction(name: string) {
   return functions.find(func => func.name === name) as UtilFunction;
 }
 
-export const UtilsResolver: ResolverFunction = (name: string) => {
-  if (functionNames.includes(name)) {
-    const func = getFunction(name);
-    if (func.file.index) {
-      return "@bernankez/utils";
-    } else if (func.file.node) {
-      return "@bernankez/utils/node";
-    } else if (func.file.browser) {
-      return "@bernankez/utils/browser";
+export function UtilsResolver(): ResolverFunction {
+  return (name: string) => {
+    if (functionNames.includes(name)) {
+      const func = getFunction(name);
+      let pkg = "";
+      if (func.file.index) {
+        pkg = "@bernankez/utils";
+      } else if (func.file.node) {
+        pkg = "@bernankez/utils/node";
+      } else if (func.file.browser) {
+        pkg = "@bernankez/utils/browser";
+      }
+      if (pkg) {
+        return {
+          module: pkg,
+          from: name,
+        };
+      }
     }
-  }
-  return null;
-};
+    return null;
+  };
+}
