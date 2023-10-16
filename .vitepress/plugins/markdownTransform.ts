@@ -77,6 +77,7 @@ ${[
   source.node ? ["Source(Node)", source.node] : undefined,
   source.demo ? ["Demo", source.demo] : undefined,
   source.doc ? ["Docs", source.doc] : undefined,
+  source.test ? ["Test", source.test] : undefined,
 ].filter(item => !!item).map(src => `<a href="${src![1]}" target="_blank" style="text-decoration: none">${src![0]}</a>`)
           .join(" • ")}
 `;

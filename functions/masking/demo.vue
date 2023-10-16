@@ -6,7 +6,7 @@
     </div>
     <div class="line">
       <span class="title">Mask range:</span>
-      <TransitionGroup name="range-list">
+      <TransitionGroup name="range-list" tag="div" class="flex flex-col flex-gap-3">
         <div v-for="(r, i) in maskRange" :key="i" class="flex flex-gap-5">
           <div class="flex items-center flex-gap-2">
             from
@@ -20,10 +20,10 @@
             <div class="i-ph:minus-square"></div>
           </button>
         </div>
+        <button class="w-fit" @click="addRange">
+          <div class="i-ph:plus-square"></div>
+        </button>
       </TransitionGroup>
-      <button class="w-fit" @click="addRange">
-        <div class="i-ph:plus-square"></div>
-      </button>
     </div>
     <div class="line">
       <span class="title">Mask code:</span>
@@ -69,11 +69,12 @@ function addRange() {
 
 .line {
   display: flex;
-  flex-direction: column;
   gap: 0.5rem;
 }
 
 .title {
+  flex-shrink: 0;
+  width: 150px;
   font-weight: 700;
 }
 </style>
