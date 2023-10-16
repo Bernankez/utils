@@ -25,21 +25,20 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: "Guide", link: "/guide/" },
-      { text: "Functions", link: "/functions/" },
+      getGuideSidebar(),
+      {
+        text: "Functions",
+        items: [
+          ...(getFunctionsSidebar() as DefaultTheme.NavItemChildren[]),
+        ],
+      },
     ],
 
     sidebar: {
       "/guide/": [
-        {
-          text: "Guide",
-          items: [
-            { text: "Getting Started", link: "/guide/" },
-          ],
-        },
+        getGuideSidebar(),
       ],
       "/functions/": [
-        { text: "All functions", link: "/functions/" },
         ...getFunctionsSidebar(),
       ],
     },
@@ -65,6 +64,15 @@ export default defineConfig({
     },
   },
 });
+
+function getGuideSidebar() {
+  return {
+    text: "Guide",
+    items: [
+      { text: "Getting Started", link: "/guide/" },
+    ],
+  };
+}
 
 function getFunctionsSidebar() {
   const links: DefaultTheme.Sidebar = [];
@@ -96,5 +104,8 @@ function getFunctionsSidebar() {
       items: categories[category].sort((a, b) => a.text!.localeCompare(b.text!)),
     });
   }
-  return links;
+  return [
+    { text: "All functions", link: "/functions/" },
+    ...links,
+  ];
 }

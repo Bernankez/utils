@@ -32,8 +32,30 @@ Importing the functions you need from `@bernankez/utils`
 import { masking } from "@bernankez/utils";
 
 const pkg = "@bernankez/utils";
-const pkg = masking(pkg, [3, -3]);
-console.log(pkg); // @be**********ils
+const masked = masking(pkg, [3, -3]);
+console.log(masked); // @be**********ils
 ```
+
+### Using with `unplugin-auto-import`
+
+First, follow the [`unplugin-auto-import` installation](https://github.com/unplugin/unplugin-auto-import#install).
+
+And then
+
+```ts
+// vite.config.ts
+import AutoImport from "unplugin-auto-import/vite";
+import { UtilsResolver } from "@bernankez/utils/resolver"; // [!code ++]
+
+export default defineConfig({
+  plugins: [
+    AutoImport({
+      resolvers: [UtilsResolver()] // [!code ++]
+    }),
+  ],
+});
+```
+
+---
 
 See all functions [HERE](/functions/).
