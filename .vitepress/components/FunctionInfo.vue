@@ -30,14 +30,13 @@
 <script setup lang="ts">
 import dayjs from "dayjs";
 import { computed } from "vue";
-import functions from "~/metadata/functions.json";
-import type { UtilFunction } from "~/metadata/update";
+import { getFunction } from "~/metadata/functions";
 
 const props = defineProps<{
   fn: string;
 }>();
 
-const func = computed(() => functions.find(func => func.name === props.fn) as UtilFunction | undefined);
+const func = computed(() => getFunction(props.fn));
 
 const env = computed(() => {
   const envs: { title: string; lastUpdated: number }[] = [];

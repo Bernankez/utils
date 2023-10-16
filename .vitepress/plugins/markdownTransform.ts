@@ -1,12 +1,5 @@
 import type { Plugin } from "vitepress";
-import functions from "../../metadata/functions.json";
-import type { UtilFunction } from "~/metadata/update";
-
-const functionNames = functions.map(func => func.name);
-
-function getFunction(name: string) {
-  return functions.find(func => func.name === name)! as UtilFunction;
-}
+import { functionNames, getFunction } from "../../metadata/functions";
 
 export function markdownTransform(): Plugin {
   return {

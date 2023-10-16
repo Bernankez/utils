@@ -3,17 +3,11 @@ import { fileURLToPath } from "node:url";
 import type { DefaultTheme } from "vitepress";
 import { defineConfig } from "vitepress";
 import UnoCSS from "unocss/vite";
-import functions from "../metadata/functions.json";
+import { categoriesOrder, functionsWithCategory } from "../metadata/functions";
 import { markdownTransform } from "./plugins/markdownTransform";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIR_ROOT = resolve(__dirname, "..");
-
-const categoriesOrder = [
-  "Alternative",
-  "String",
-  "Validate",
-];
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -76,32 +70,13 @@ function getGuideSidebar() {
 
 function getFunctionsSidebar() {
   const links: DefaultTheme.Sidebar = [];
-  const ungrouped: DefaultTheme.SidebarItem[] = [];
-  const categories = {} as Record<string, DefaultTheme.SidebarItem[]>;
-  for (const func of functions) {
-    if (!func.category) {
-      ungrouped.push({
-        text: func.name,
-        link: `/functions/${func.name}/`,
-      });
-      continue;
-    }
-    if (!categoriesOrder.includes(func.category)) {
-      categoriesOrder.push(func.category);
-    }
-    if (!categories[func.category]) {
-      categories[func.category] = [];
-    }
-    categories[func.category].push({
-      text: func.name,
-      link: `/functions/${func.name}/`,
-    });
-  }
-  links.push(...ungrouped.sort((a, b) => a.text!.localeCompare(b.text!)));
   for (const category of categoriesOrder) {
     links.push({
       text: category,
-      items: categories[category].sort((a, b) => a.text!.localeCompare(b.text!)),
+      items: functionsWithCategory[category].map(func => ({
+        text: func.name,
+        link: `/functions/${func.name}/`,
+      })),
     });
   }
   return [

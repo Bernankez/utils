@@ -1,12 +1,5 @@
 import type { ResolverFunction } from "unplugin-auto-import/types";
-import type { UtilFunction } from "~/metadata/update";
-import functions from "~/metadata/functions.json";
-
-const functionNames = functions.map(func => func.name);
-
-function getFunction(name: string) {
-  return functions.find(func => func.name === name) as UtilFunction;
-}
+import { functionNames, getFunction } from "~/metadata/functions";
 
 export function UtilsResolver(): ResolverFunction {
   return (name: string) => {
