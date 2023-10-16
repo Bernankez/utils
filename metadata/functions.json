@@ -72,11 +72,13 @@
     },
     "file": {
       "doc": "index.md",
-      "node": "index.node.ts"
+      "node": "index.node.ts",
+      "test": "index.test.ts"
     },
     "source": {
       "node": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.node.ts",
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.md"
+      "doc": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.md",
+      "test": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.test.ts"
     },
     "url": {
       "doc": "https://utils.keke.cc/functions/resolvePath/"
