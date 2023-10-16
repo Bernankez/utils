@@ -22,8 +22,8 @@ export function UtilsResolver(): ResolverFunction {
       }
       if (pkg) {
         return {
-          module: pkg,
-          from: name,
+          module: name,
+          from: pkg,
         };
       }
     }
