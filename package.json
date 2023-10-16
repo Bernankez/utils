@@ -21,7 +21,7 @@
   ],
   "sideEffects": false,
   "exports": {
-    "./": {
+    ".": {
       "types": "./dist/index.d.ts",
       "require": "./dist/index.cjs",
       "import": "./dist/index.mjs"
@@ -35,6 +35,11 @@
       "types": "./dist/browser.d.ts",
       "require": "./dist/browser.cjs",
       "import": "./dist/browser.mjs"
+    },
+    "./resolver": {
+      "types": "./dist/resolver.d.ts",
+      "require": "./dist/resolver.cjs",
+      "import": "./dist/resolver.mjs"
     }
   },
   "main": "./dist/index.mjs",
