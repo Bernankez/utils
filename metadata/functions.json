@@ -62,7 +62,7 @@
     "url": {
       "doc": "https://utils.keke.cc/functions/masking/"
     },
-    "category": "String"
+    "category": "Processing"
   },
   {
     "path": "functions/resolvePath",

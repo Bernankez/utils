@@ -12,7 +12,7 @@ export function getFunction(name: string) {
 function getFunctionsWithCategory() {
   const categoriesOrder = [
     "Alternative",
-    "String",
+    "Processing",
     "Validate",
   ];
   const functionsWithCategory = {} as Record<string, UtilFunction[]>;
