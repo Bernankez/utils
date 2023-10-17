@@ -5,7 +5,7 @@
         {{ category }}
       </div>
       <div class="m-l-3 m-t-1 flex flex-gap-2">
-        <a v-for="func in functionsWithCategory[category]" :key="func.name" class="w-fit rounded-2 bg-gray-100 p-x-2 p-y-1 dark:bg-dark-200 text-#333! dark:text-[--vp-c-text-1]!" :href="func.url.doc.replace(/https?:\/\/utils\.keke\.cc\//g, '/')">
+        <a v-for="func in functionsWithCategory[category]" :key="func.name" class="w-fit rounded-1 bg-code p-x-2 p-y-.5 font-400! text-default! decoration-none!" :href="func.url.doc.replace(/https?:\/\/utils\.keke\.cc\//g, '/')">
           {{ func.name }}
         </a>
       </div>
