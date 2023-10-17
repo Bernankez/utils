@@ -10,7 +10,7 @@ import "./style.css";
 export default {
   extends: DefaultTheme,
   enhanceApp(ctx) {
-    ctx.app.component("Badge", Badge);
+    ctx.app.component("CustomBadge", Badge);
     ctx.app.component("DemoWrapper", DemoWrapper);
     ctx.app.component("FunctionInfo", FunctionInfo);
     ctx.app.component("FunctionList", FunctionList);
