@@ -20,7 +20,7 @@
             <div class="i-ph:minus-square"></div>
           </button>
         </div>
-        <button class="w-fit" @click="addRange">
+        <button key="add" class="w-fit" @click="addRange">
           <div class="i-ph:plus-square"></div>
         </button>
       </TransitionGroup>

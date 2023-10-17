@@ -4,8 +4,6 @@ import { defineBuildConfig } from "unbuild";
 export default defineBuildConfig({
   entries: [
     "functions/index",
-    "functions/node",
-    "functions/browser",
     "functions/resolver",
   ],
   declaration: true,
@@ -21,8 +19,6 @@ export default defineBuildConfig({
     "@": resolve(__dirname, "./functions"),
     "~": __dirname,
     "@bernankez/utils": resolve(__dirname, "./functions"),
-    "@bernankez/utils/node": resolve(__dirname, "./functions/node.ts"),
-    "@bernankez/utils/browser": resolve(__dirname, "./functions/browser.ts"),
   },
   hooks: {
     "build:before": (ctx) => {

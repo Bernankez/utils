@@ -1,5 +1,6 @@
 import { assert } from "@/_internal";
-import { isDefined, isNumber } from "@/index";
+import { isDefined } from "@/isDefined";
+import { isNumber } from "@/isNumber";
 
 const isTuple = (arr: any[]): arr is [number] | [number, number] => {
   if (arr.length > 0) {

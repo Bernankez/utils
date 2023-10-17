@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { resolvePath } from "@bernankez/utils/node";
+import { resolvePath } from "@bernankez/utils";
 
 const isWindows = process.platform === "win32";
 

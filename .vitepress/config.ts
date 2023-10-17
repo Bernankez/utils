@@ -52,8 +52,6 @@ export default defineConfig({
         "@": join(DIR_ROOT, "./functions"),
         "~": join(DIR_ROOT, "./"),
         "@bernankez/utils": join(DIR_ROOT, "./functions"),
-        "@bernankez/utils/node": join(DIR_ROOT, "./functions/node.ts"),
-        "@bernankez/utils/browser": join(DIR_ROOT, "./functions/browser.ts"),
       },
     },
   },

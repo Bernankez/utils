@@ -26,16 +26,6 @@
       "require": "./dist/index.cjs",
       "import": "./dist/index.mjs"
     },
-    "./node": {
-      "types": "./dist/node.d.ts",
-      "require": "./dist/node.cjs",
-      "import": "./dist/node.mjs"
-    },
-    "./browser": {
-      "types": "./dist/browser.d.ts",
-      "require": "./dist/browser.cjs",
-      "import": "./dist/browser.mjs"
-    },
     "./resolver": {
       "types": "./dist/resolver.d.ts",
       "require": "./dist/resolver.cjs",
