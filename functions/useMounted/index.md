@@ -8,7 +8,7 @@ category: Vue
 
 ```vue
 <script setup>
-import { useMounted } from "@bernankez/utils";
+import { useMounted } from "@bernankez/utils/vue";
 
 const { isMounted } = useMounted();
 </script>

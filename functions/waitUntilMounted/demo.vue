@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue-demi";
-import { waitUntilMounted } from "@bernankez/utils";
+import { waitUntilMounted } from "@bernankez/utils/vue";
 
 const text = ref("unmount");
 

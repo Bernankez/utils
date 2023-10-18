@@ -36,6 +36,11 @@
       "require": "./dist/browser.cjs",
       "import": "./dist/browser.mjs"
     },
+    "./vue": {
+      "types": "./dist/vue.d.ts",
+      "require": "./dist/vue.cjs",
+      "import": "./dist/vue.mjs"
+    },
     "./resolver": {
       "types": "./dist/resolver.d.ts",
       "require": "./dist/resolver.cjs",
@@ -77,7 +82,7 @@
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0-rc.1",
     "unplugin-auto-import": "^0.16.0",
-    "vue": "^2.0.0 || >=3.0.0"
+    "vue": "^2.6.0 || >=3.0.0"
   },
   "peerDependenciesMeta": {
     "@vue/composition-api": {

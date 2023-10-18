@@ -58,6 +58,12 @@ const env = computed(() => {
       lastUpdated: func.value.lastUpdated.node!,
     });
   }
+  if (func.value?.file.vue) {
+    envs.push({
+      title: "Vue",
+      lastUpdated: func.value.lastUpdated.vue!,
+    });
+  }
   return envs;
 });
 </script>

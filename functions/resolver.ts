@@ -12,6 +12,8 @@ export function UtilsResolver(): ResolverFunction {
         pkg = "@bernankez/utils/node";
       } else if (func.file.browser) {
         pkg = "@bernankez/utils/browser";
+      } else if (func.file.vue) {
+        pkg = "@bernankez/utils/vue";
       }
       if (pkg) {
         return {

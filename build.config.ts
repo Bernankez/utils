@@ -6,6 +6,7 @@ export default defineBuildConfig({
     "functions/index",
     "functions/node",
     "functions/browser",
+    "functions/vue",
     "functions/resolver",
   ],
   declaration: true,

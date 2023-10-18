@@ -10,6 +10,7 @@ export default defineConfig(() => {
         "@bernankez/utils": resolve(__dirname, "./functions"),
         "@bernankez/utils/node": resolve(__dirname, "./functions/node.ts"),
         "@bernankez/utils/browser": resolve(__dirname, "./functions/browser.ts"),
+        "@bernankez/utils/vue": resolve(__dirname, "./functions/vue.ts"),
       },
     },
   };

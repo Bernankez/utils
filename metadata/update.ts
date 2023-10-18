@@ -15,6 +15,7 @@ const defaultNames = {
   index: "index.ts",
   node: "index.node.ts",
   browser: "index.browser.ts",
+  vue: "index.vuejs.ts",
   demo: "demo.vue",
   test: "index.test.ts",
 };
@@ -30,6 +31,7 @@ export interface UtilFunction {
     index?: number;
     node?: number;
     browser?: number;
+    vue?: number;
   };
   /** File names */
   file: {
@@ -37,6 +39,7 @@ export interface UtilFunction {
     index?: string;
     node?: string;
     browser?: string;
+    vue?: string;
     test?: string;
     demo?: string;
   };
@@ -46,6 +49,7 @@ export interface UtilFunction {
     index?: string;
     node?: string;
     browser?: string;
+    vue?: string;
     test?: string;
     demo?: string;
   };
@@ -66,7 +70,8 @@ async function readFunctionMetadata() {
         const indexPath = hasFile(dirPath, defaultNames.index) ? join(dirPath, defaultNames.index) : undefined;
         const nodePath = hasFile(dirPath, defaultNames.node) ? join(dirPath, defaultNames.node) : undefined;
         const browserPath = hasFile(dirPath, defaultNames.browser) ? join(dirPath, defaultNames.browser) : undefined;
-        if (!indexPath && !nodePath && !browserPath) {
+        const vuePath = hasFile(dirPath, defaultNames.vue) ? join(dirPath, defaultNames.vue) : undefined;
+        if (!indexPath && !nodePath && !browserPath && !vuePath) {
           continue;
         }
 
@@ -89,17 +94,20 @@ async function readFunctionMetadata() {
             index: indexPath ? +await git.raw(["log", "-1", "--format=%at", indexPath]) * 1000 : undefined,
             node: nodePath ? +await git.raw(["log", "-1", "--format=%at", nodePath]) * 1000 : undefined,
             browser: browserPath ? +await git.raw(["log", "-1", "--format=%at", browserPath]) * 1000 : undefined,
+            vue: vuePath ? +await git.raw(["log", "-1", "--format=%at", vuePath]) * 1000 : undefined,
           },
           file: {
             doc: "index.md",
             index: indexPath ? defaultNames.index : undefined,
             node: nodePath ? defaultNames.node : undefined,
             browser: browserPath ? defaultNames.browser : undefined,
+            vue: vuePath ? defaultNames.vue : undefined,
           },
           source: {
             index: indexPath ? GITHUB_REPO + normalizePath(relative(DIR_ROOT, indexPath)) : undefined,
             node: nodePath ? GITHUB_REPO + normalizePath(relative(DIR_ROOT, nodePath)) : undefined,
             browser: browserPath ? GITHUB_REPO + normalizePath(relative(DIR_ROOT, browserPath)) : undefined,
+            vue: vuePath ? GITHUB_REPO + normalizePath(relative(DIR_ROOT, vuePath)) : undefined,
             doc: GITHUB_REPO + normalizePath(relative(DIR_ROOT, docPath)),
           },
           url: {

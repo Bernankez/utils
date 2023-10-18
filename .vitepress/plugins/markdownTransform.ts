@@ -68,6 +68,7 @@ ${[
   source.index ? ["Source", source.index] : undefined,
   source.browser ? ["Source(Browser)", source.browser] : undefined,
   source.node ? ["Source(Node)", source.node] : undefined,
+  source.vue ? ["Source(Vue)", source.vue] : undefined,
   source.demo ? ["Demo", source.demo] : undefined,
   source.doc ? ["Docs", source.doc] : undefined,
   source.test ? ["Tests", source.test] : undefined,

@@ -8,7 +8,7 @@ category: Vue
 
 ```vue
 <script setup>
-import { waitUntilMounted } from "@bernankez/utils";
+import { waitUntilMounted } from "@bernankez/utils/vue";
 
 async function init() {
   await waitUntilMounted();

@@ -8,7 +8,7 @@ category: Vue
 
 ```vue
 <script setup>
-import { tryUntilMounted } from "@bernankez/utils";
+import { tryUntilMounted } from "@bernankez/utils/vue";
 
 tryUntilMounted(() => {
   // Will excute on mounted
