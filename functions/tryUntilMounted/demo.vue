@@ -8,7 +8,7 @@
 import { ref } from "vue-demi";
 import { tryUntilMounted } from "@bernankez/utils/vue";
 
-const text = ref("unmounted");
+const text = ref("unmount");
 
 tryUntilMounted(() => {
   text.value = "mounted";
