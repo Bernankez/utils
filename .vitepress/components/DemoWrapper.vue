@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-wrapper relative rounded-2 bg-cool-gray-100 p-x-7 p-y-5 dark:bg-dark-900">
+  <div class="demo-wrapper relative rounded-0 bg-code-block p-x-6 p-y-4 -m-x-24px sm:m-x-0 sm:rounded-2">
     <a :href="source" target="_blank" class="absolute right-2 top-1 text-3.5 decoration-none!">
       source
     </a>

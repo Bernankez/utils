@@ -13,6 +13,7 @@ export default defineConfig({
       node: "#44883e",
       browser: "#0095dd",
       code: "var(--vp-code-bg)",
+      codeBlock: "var(--vp-code-block-bg)",
       default: {
         DEFAULT: "var(--vp-c-text-1)",
         1: "var(--vp-c-text-1)",
