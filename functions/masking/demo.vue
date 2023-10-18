@@ -10,11 +10,11 @@
         <div v-for="(r, i) in maskRange" :key="r[0]" class="range flex flex-gap-5">
           <div class="flex items-center flex-gap-2">
             from
-            <input v-model="r[0]" class="w-full" type="number" />
+            <input v-model="r[1]" class="w-full" type="number" />
           </div>
           <div class="flex items-center flex-gap-2">
             to
-            <input v-model="r[1]" class="w-full" type="number" />
+            <input v-model="r[2]" class="w-full" type="number" />
           </div>
           <button v-if="maskRange.length > 1" @click="maskRange.splice(i, 1)">
             <div class="i-ph:minus-square"></div>
