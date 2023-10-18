@@ -38,7 +38,7 @@
 
 <script setup lang="ts">
 import { computed, ref } from "vue-demi";
-import { masking } from ".";
+import { masking } from "@bernankez/utils";
 
 const str = ref("@bernankez/utils");
 const maskRange = ref<[number, number][]>([[2, -2]]);

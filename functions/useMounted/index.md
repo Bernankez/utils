@@ -10,6 +10,6 @@ category: Vue
 <script setup>
 import { useMounted } from "@bernankez/utils";
 
-const isMounted = useMounted();
+const { isMounted } = useMounted();
 </script>
 ```
