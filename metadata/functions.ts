@@ -14,6 +14,7 @@ function getFunctionsWithCategory() {
     "Alternative",
     "Processing",
     "Validate",
+    "Vue",
   ];
   const functionsWithCategory = {} as Record<string, UtilFunction[]>;
   const ungrouped: UtilFunction[] = [];

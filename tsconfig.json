@@ -19,6 +19,6 @@
       "@bernankez/utils/browser": ["functions/browser.ts"]
     }
   },
-  "include": ["functions/**/*.ts", "metadata/**/*.ts", "**/*.md", ".vitepress/**/*.ts", ".vitepress/**/*.vue"],
+  "include": ["functions/**/*.ts", "metadata/**/*.ts", "**/*.md", ".vitepress/**/*.ts", ".vitepress/**/*.vue", "functions/**/*.vue"],
   "exclude": ["dist"]
 }

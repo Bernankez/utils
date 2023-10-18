@@ -84,5 +84,66 @@
       "doc": "https://utils.keke.cc/functions/resolvePath/"
     },
     "category": "Alternative"
+  },
+  {
+    "path": "functions/tryUntilMounted",
+    "name": "tryUntilMounted",
+    "lastUpdated": {
+      "index": 0
+    },
+    "file": {
+      "doc": "index.md",
+      "index": "index.ts",
+      "demo": "demo.vue"
+    },
+    "source": {
+      "index": "https://github.com/Bernankez/utils/blob/master/functions/tryUntilMounted/index.ts",
+      "doc": "https://github.com/Bernankez/utils/blob/master/functions/tryUntilMounted/index.md",
+      "demo": "https://github.com/Bernankez/utils/blob/master/functions/tryUntilMounted/demo.vue"
+    },
+    "url": {
+      "doc": "https://utils.keke.cc/functions/tryUntilMounted/"
+    },
+    "category": "Vue"
+  },
+  {
+    "path": "functions/useMounted",
+    "name": "useMounted",
+    "lastUpdated": {
+      "index": 0
+    },
+    "file": {
+      "doc": "index.md",
+      "index": "index.ts"
+    },
+    "source": {
+      "index": "https://github.com/Bernankez/utils/blob/master/functions/useMounted/index.ts",
+      "doc": "https://github.com/Bernankez/utils/blob/master/functions/useMounted/index.md"
+    },
+    "url": {
+      "doc": "https://utils.keke.cc/functions/useMounted/"
+    },
+    "category": "Vue"
+  },
+  {
+    "path": "functions/waitUntilMounted",
+    "name": "waitUntilMounted",
+    "lastUpdated": {
+      "index": 0
+    },
+    "file": {
+      "doc": "index.md",
+      "index": "index.ts",
+      "demo": "demo.vue"
+    },
+    "source": {
+      "index": "https://github.com/Bernankez/utils/blob/master/functions/waitUntilMounted/index.ts",
+      "doc": "https://github.com/Bernankez/utils/blob/master/functions/waitUntilMounted/index.md",
+      "demo": "https://github.com/Bernankez/utils/blob/master/functions/waitUntilMounted/demo.vue"
+    },
+    "url": {
+      "doc": "https://utils.keke.cc/functions/waitUntilMounted/"
+    },
+    "category": "Vue"
   }
 ]
