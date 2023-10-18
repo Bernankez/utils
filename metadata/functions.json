@@ -89,7 +89,7 @@
     "path": "functions/tryUntilMounted",
     "name": "tryUntilMounted",
     "lastUpdated": {
-      "index": 0
+      "index": 1697625801000
     },
     "file": {
       "doc": "index.md",
@@ -110,7 +110,7 @@
     "path": "functions/useMounted",
     "name": "useMounted",
     "lastUpdated": {
-      "index": 0
+      "index": 1697625801000
     },
     "file": {
       "doc": "index.md",
@@ -129,7 +129,7 @@
     "path": "functions/waitUntilMounted",
     "name": "waitUntilMounted",
     "lastUpdated": {
-      "index": 0
+      "index": 1697625801000
     },
     "file": {
       "doc": "index.md",
