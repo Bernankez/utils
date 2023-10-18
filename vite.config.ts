@@ -6,7 +6,7 @@ export default defineConfig(() => {
     resolve: {
       alias: {
         "@": resolve(__dirname, "./functions"),
-        "*": __dirname,
+        "~": __dirname,
         "@bernankez/utils": resolve(__dirname, "./functions"),
         "@bernankez/utils/node": resolve(__dirname, "./functions/node.ts"),
         "@bernankez/utils/browser": resolve(__dirname, "./functions/browser.ts"),
