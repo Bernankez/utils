@@ -105,6 +105,7 @@
     "eslint": "^8.51.0",
     "gray-matter": "^4.0.3",
     "lint-staged": "^14.0.1",
+    "nanoid": "^5.0.2",
     "rimraf": "^5.0.5",
     "simple-git": "^3.20.0",
     "simple-git-hooks": "^2.9.0",

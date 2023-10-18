@@ -6,8 +6,8 @@
     </div>
     <div class="line">
       <span class="title">Mask range:</span>
-      <TransitionGroup name="range-list" tag="div" class="flex flex-col flex-gap-3">
-        <div v-for="(r, i) in maskRange" :key="i" class="flex flex-gap-5">
+      <TransitionGroup name="range-list" tag="div">
+        <div v-for="(r, i) in maskRange" :key="r[0]" class="range flex flex-gap-5">
           <div class="flex items-center flex-gap-2">
             from
             <input v-model="r[0]" class="w-full" type="number" />
@@ -39,18 +39,23 @@
 <script setup lang="ts">
 import { computed, ref } from "vue-demi";
 import { masking } from "@bernankez/utils";
+import { nanoid } from "nanoid";
 
 const str = ref("@bernankez/utils");
-const maskRange = ref<[number, number][]>([[2, -2]]);
+const maskRange = ref<[string, number, number][]>([[nanoid(), 2, -2]]);
 const maskStr = ref("*");
-const masked = computed(() => masking(str.value, maskRange.value, maskStr.value));
+const masked = computed(() => masking(str.value, maskRange.value.map(r => r.slice(1, 3)) as unknown as [number, number], maskStr.value));
 
 function addRange() {
-  maskRange.value.push([0, 0]);
+  maskRange.value.push([nanoid(), 0, 0]);
 }
 </script>
 
 <style scoped>
+.range + .range {
+  margin-top: 0.75rem;
+}
+
 .range-list-move,
 .range-list-enter-active,
 .range-list-leave-active {
