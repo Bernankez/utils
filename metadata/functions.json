@@ -61,6 +61,25 @@
     "category": "Validation"
   },
   {
+    "path": "functions/makeDestructurable",
+    "name": "makeDestructurable",
+    "lastUpdated": {
+      "index": 0
+    },
+    "file": {
+      "doc": "index.md",
+      "index": "index.ts"
+    },
+    "source": {
+      "doc": "https://github.com/Bernankez/utils/blob/master/functions/makeDestructurable/index.md",
+      "index": "https://github.com/Bernankez/utils/blob/master/functions/makeDestructurable/index.ts"
+    },
+    "url": {
+      "doc": "https://utils.keke.cc/functions/makeDestructurable/"
+    },
+    "category": "Processing"
+  },
+  {
     "path": "functions/masking",
     "name": "masking",
     "lastUpdated": {
