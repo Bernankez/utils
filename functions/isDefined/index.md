@@ -1,5 +1,5 @@
 ---
-category: Validate
+category: Validation
 ---
 
 # isDefined

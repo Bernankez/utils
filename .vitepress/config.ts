@@ -72,13 +72,15 @@ function getGuideSidebar() {
 function getFunctionsSidebar() {
   const links: DefaultTheme.Sidebar = [];
   for (const category of categoriesOrder) {
-    links.push({
-      text: category,
-      items: functionsWithCategory[category].map(func => ({
-        text: func.name,
-        link: `/functions/${func.name}/`,
-      })),
-    });
+    if (functionsWithCategory[category]) {
+      links.push({
+        text: category,
+        items: functionsWithCategory[category].map(func => ({
+          text: func.name,
+          link: `/functions/${func.name}/`,
+        })),
+      });
+    }
   }
   return [
     { text: "All functions", link: "/functions/" },

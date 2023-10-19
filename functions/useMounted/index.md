@@ -4,6 +4,8 @@ category: Vue
 
 # useMounted
 
+Same as VueUse's [`useMounted`](https://vueuse.org/core/useMounted/).
+
 ## Usage
 
 ```vue

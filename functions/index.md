@@ -9,7 +9,17 @@ At the beginning of each function page, there is a brief section displaying info
 > <FunctionInfo fn="masking" />
 
 ::: info
-Note that some function is only available in a Node or Browser environment, or needs Vue as dependency. Use the correct import from `@bernankez/utils/node` or `@bernankez/utils/browser` or `@bernankez/utils/vue`.
+Note that some functions can only run in specific environments or require specific dependencies. If you are importing manually, make sure to import from the correct entry points. Currently, the following entry points are available:
+```
+@bernankez/utils
+@bernankez/utils/node
+@bernankez/utils/browser
+@bernankez/utils/vue
+```
+:::
+
+::: warning
+Functions under `Unstable` category are in an early stage, and APIs may change frequently. Please use with caution.
 :::
 
 ## Functions

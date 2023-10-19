@@ -38,32 +38,27 @@ const props = defineProps<{
 
 const func = computed(() => getFunction(props.fn));
 
+const titleMap = {
+  index: "Browser & Node",
+  browser: "Browser",
+  node: "Node",
+  vuejs: "Vue",
+  typescript: "TypeScript",
+};
+
 const env = computed(() => {
   const envs: { title: string; lastUpdated: number }[] = [];
-  if (func.value?.file.index) {
-    envs.push({
-      title: "Browser & Node",
-      lastUpdated: func.value.lastUpdated.index!,
-    });
-  }
-  if (func.value?.file.browser) {
-    envs.push({
-      title: "Browser",
-      lastUpdated: func.value.lastUpdated.browser!,
-    });
-  }
-  if (func.value?.file.node) {
-    envs.push({
-      title: "Node",
-      lastUpdated: func.value.lastUpdated.node!,
-    });
-  }
-  if (func.value?.file.vue) {
-    envs.push({
-      title: "Vue",
-      lastUpdated: func.value.lastUpdated.vue!,
-    });
-  }
+  Object.entries(func.value?.file || {}).forEach(([env, filename]) => {
+    if (["doc", "demo", "test"].includes(env)) {
+      return;
+    }
+    if (filename) {
+      envs.push({
+        title: titleMap[env as keyof typeof titleMap] || env,
+        lastUpdated: func.value?.lastUpdated?.[env as keyof typeof titleMap] || 0,
+      });
+    }
+  });
   return envs;
 });
 </script>

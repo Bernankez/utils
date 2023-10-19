@@ -10,15 +10,14 @@ const DIR_FUNCTION = resolve(DIR_ROOT, "./functions");
 const DOC_URL = "https://utils.keke.cc/";
 const GITHUB_REPO = "https://github.com/Bernankez/utils/blob/master/";
 const git = Git(DIR_ROOT);
+const FUNCTION_REG = /^index(\.\w*){0,1}\.ts$/;
 
 const defaultNames = {
-  index: "index.ts",
-  node: "index.node.ts",
-  browser: "index.browser.ts",
-  vue: "index.vuejs.ts",
   demo: "demo.vue",
   test: "index.test.ts",
 };
+
+export type ImportEntry = "index" | "node" | "browser" | "vuejs" | "typescript";
 
 export interface UtilFunction {
   /** Relative path to project root */
@@ -28,30 +27,23 @@ export interface UtilFunction {
   /** Category */
   category?: string;
   lastUpdated: {
-    index?: number;
-    node?: number;
-    browser?: number;
-    vue?: number;
+    [env in ImportEntry]: number | undefined;
   };
   /** File names */
   file: {
     doc: string;
-    index?: string;
-    node?: string;
-    browser?: string;
-    vue?: string;
-    test?: string;
     demo?: string;
+    test?: string;
+  } & {
+    [env in ImportEntry]: string | undefined;
   };
   /** Source url for function */
   source: {
     doc: string;
-    index?: string;
-    node?: string;
-    browser?: string;
-    vue?: string;
-    test?: string;
     demo?: string;
+    test?: string;
+  } & {
+    [env in ImportEntry]: string | undefined;
   };
   url: {
     doc: string;
@@ -67,80 +59,81 @@ async function readFunctionMetadata() {
       const stat = statSync(dirPath);
 
       if (stat.isDirectory()) {
-        const indexPath = hasFile(dirPath, defaultNames.index) ? join(dirPath, defaultNames.index) : undefined;
-        const nodePath = hasFile(dirPath, defaultNames.node) ? join(dirPath, defaultNames.node) : undefined;
-        const browserPath = hasFile(dirPath, defaultNames.browser) ? join(dirPath, defaultNames.browser) : undefined;
-        const vuePath = hasFile(dirPath, defaultNames.vue) ? join(dirPath, defaultNames.vue) : undefined;
-        if (!indexPath && !nodePath && !browserPath && !vuePath) {
+        // Check index file
+        const childrenNames = readdirSync(dirPath, "utf-8");
+        const hasIndexFile = childrenNames.some(name => FUNCTION_REG.test(name));
+        if (!hasIndexFile) {
+          console.warn(`[meta update] ${name} does not provide an index.ts file, ignored.`);
           continue;
         }
 
+        // Check doc file
         const docPath = join(dirPath, "index.md");
         const doc = readFileSync(docPath, "utf-8");
-
         if (!doc) {
           console.warn(`[metadata update] ${name} doc not found, ignored!`);
           continue;
         }
 
-        const relativeDirPath = relative(DIR_ROOT, dirPath);
-        const childrenNames = readdirSync(dirPath, "utf-8");
+        // envName: filepath
+        const indexPaths: Record<string, string> = {};
+        // Handle index files
+        childrenNames.forEach((indexName) => {
+          const match = indexName.match(FUNCTION_REG);
+          if (match) {
+            const [full, envName] = match;
+            if (envName) {
+              // Ignore test file
+              if (envName === ".test") {
+                return;
+              }
+              indexPaths[envName.slice(1)] = join(dirPath, full);
+            } else {
+              indexPaths.index = join(dirPath, full);
+            }
+          }
+        });
 
+        const relativeDirPath = relative(DIR_ROOT, dirPath);
+        const demoPath = childrenNames.includes(defaultNames.demo) ? join(dirPath, defaultNames.demo) : undefined;
+        const testPath = childrenNames.includes(defaultNames.test) ? join(dirPath, defaultNames.test) : undefined;
+
+        // Handle lastUpdated time
+        const lastUpdates: Record<string, number> = {};
+        for (const [envName, filepath] of Object.entries(indexPaths)) {
+          // Convert to number
+          lastUpdates[envName] = +await git.raw(["log", "-1", "--format=%at", filepath]) * 1000;
+        }
         const func: UtilFunction = {
           path: normalizePath(relativeDirPath),
           name,
-          // convert to number
-          lastUpdated: {
-            index: indexPath ? +await git.raw(["log", "-1", "--format=%at", indexPath]) * 1000 : undefined,
-            node: nodePath ? +await git.raw(["log", "-1", "--format=%at", nodePath]) * 1000 : undefined,
-            browser: browserPath ? +await git.raw(["log", "-1", "--format=%at", browserPath]) * 1000 : undefined,
-            vue: vuePath ? +await git.raw(["log", "-1", "--format=%at", vuePath]) * 1000 : undefined,
-          },
+          lastUpdated: lastUpdates as UtilFunction["lastUpdated"],
           file: {
             doc: "index.md",
-            index: indexPath ? defaultNames.index : undefined,
-            node: nodePath ? defaultNames.node : undefined,
-            browser: browserPath ? defaultNames.browser : undefined,
-            vue: vuePath ? defaultNames.vue : undefined,
-          },
+            demo: demoPath ? defaultNames.demo : undefined,
+            test: testPath ? defaultNames.test : undefined,
+            ...Object.entries(indexPaths).map(([envName]) => ({
+              [envName]: envName === "index" ? "index.ts" : `index.${envName}.ts`,
+            })).reduce((pre, cur) => ({ ...pre, ...cur }), {}),
+          } as UtilFunction["file"],
           source: {
-            index: indexPath ? GITHUB_REPO + normalizePath(relative(DIR_ROOT, indexPath)) : undefined,
-            node: nodePath ? GITHUB_REPO + normalizePath(relative(DIR_ROOT, nodePath)) : undefined,
-            browser: browserPath ? GITHUB_REPO + normalizePath(relative(DIR_ROOT, browserPath)) : undefined,
-            vue: vuePath ? GITHUB_REPO + normalizePath(relative(DIR_ROOT, vuePath)) : undefined,
             doc: GITHUB_REPO + normalizePath(relative(DIR_ROOT, docPath)),
-          },
+            demo: demoPath ? GITHUB_REPO + normalizePath(relative(DIR_ROOT, demoPath)) : undefined,
+            test: testPath ? GITHUB_REPO + normalizePath(relative(DIR_ROOT, testPath)) : undefined,
+            ...Object.entries(indexPaths).map(([envName, filepath]) => ({
+              [envName]: GITHUB_REPO + normalizePath(relative(DIR_ROOT, filepath)),
+            })).reduce((pre, cur) => ({ ...pre, ...cur }), {}),
+          } as UtilFunction["source"],
           url: {
             doc: `${DOC_URL + normalizePath(relativeDirPath)}/`,
           },
         };
 
         const { data = {} } = matter(doc);
-        const { demo, test, category } = data;
+        const { category } = data;
 
         if (category) {
           func.category = data.category;
-        }
-
-        // test demo doc
-
-        const names = { demo, test };
-        for (const _key in names) {
-          const key = _key as keyof typeof names;
-          // specified file name but not found
-          if (names[key] !== undefined && !childrenNames.includes(names[key])) {
-            console.warn(`[metadata update] ${name} requires ${key}, but file not found`);
-            continue;
-          }
-          const value = names[key] ?? defaultNames[key];
-
-          if (names[key] === false || !childrenNames.includes(value)) {
-            continue;
-          }
-
-          func.file[key] = value;
-
-          func.source[key] = GITHUB_REPO + normalizePath(join(relativeDirPath, value));
         }
 
         functions.push(func);
@@ -159,17 +152,4 @@ run();
 
 function normalizePath(path: string) {
   return path.replace(/\\/g, "/");
-}
-
-function hasFile(dir: string, filename: string | string[]) {
-  const childrenNames = readdirSync(dir, "utf-8");
-  if (typeof filename === "string") {
-    return childrenNames.includes(filename);
-  }
-  for (const name of filename) {
-    if (childrenNames.includes(name)) {
-      return true;
-    }
-  }
-  return false;
 }
