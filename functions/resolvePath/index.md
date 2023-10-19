@@ -11,7 +11,7 @@ CommonJS paths polyfill for esm.
 ```ts
 import { resolvePath } from "@bernankez/utils/node";
 
-const { __dirname, __filename, root } = resolvePath(import.meta.url);
+const { __dirname, __filename, root, require } = resolvePath(import.meta.url);
 ```
 
 
