@@ -3,7 +3,7 @@
     "path": "functions/Prettier",
     "name": "Prettier",
     "lastUpdated": {
-      "typescript": 0
+      "typescript": 1697702434000
     },
     "file": {
       "doc": "index.md",
@@ -87,7 +87,7 @@
     "path": "functions/resolvePath",
     "name": "resolvePath",
     "lastUpdated": {
-      "node": 1697336534000
+      "node": 1697702615000
     },
     "file": {
       "doc": "index.md",
