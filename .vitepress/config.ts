@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 import type { DefaultTheme } from "vitepress";
 import { defineConfig } from "vitepress";
 import UnoCSS from "unocss/vite";
-import { categoriesOrder, functionsWithCategory } from "../metadata/functions";
+import { categoriesOrder, functionsWithCategory, functionsWithoutCategory } from "../metadata/functions";
 import { version } from "../package.json";
 import { markdownTransform } from "./plugins/markdownTransform";
 
@@ -95,6 +95,15 @@ function getFunctionsSidebar() {
   }
   return [
     { text: "All functions", link: "/functions/" },
+    functionsWithoutCategory.length
+      ? {
+          text: "Ungrouped",
+          items: functionsWithoutCategory.map(func => ({
+            text: func.name,
+            link: `/functions/${func.name}/`,
+          })),
+        }
+      : undefined!,
     ...links,
-  ];
+  ].filter(item => !!item);
 }

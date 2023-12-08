@@ -9,7 +9,7 @@ export function getFunction(name: string) {
   return functions.find(func => func.name === name) as UtilFunction;
 }
 
-function getFunctionsWithCategory() {
+function getFunctions() {
   const categoriesOrder = [
     "Alternative",
     "Processing",
@@ -18,10 +18,10 @@ function getFunctionsWithCategory() {
     "Type",
   ];
   const functionsWithCategory = {} as Record<string, UtilFunction[]>;
-  const ungrouped: UtilFunction[] = [];
+  const functionsWithoutCategory: UtilFunction[] = [];
   for (const func of functions) {
     if (!func.category) {
-      ungrouped.push(func);
+      functionsWithoutCategory.push(func);
       continue;
     }
     if (!categoriesOrder.includes(func.category)) {
@@ -39,7 +39,8 @@ function getFunctionsWithCategory() {
   return {
     categoriesOrder,
     functionsWithCategory,
+    functionsWithoutCategory,
   };
 }
 
-export const { categoriesOrder, functionsWithCategory } = getFunctionsWithCategory();
+export const { categoriesOrder, functionsWithCategory, functionsWithoutCategory } = getFunctions();
