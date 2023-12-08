@@ -48,6 +48,8 @@ The entry file name should match the runtime environment of your function. Here 
 
 3. Export your function in `/functions/[index|node|browser|vue].ts`. It depends on your function's runtime environment. Type helpers should export from `/functions/index.ts`.
 
+4. Restart VitePress. Now you can see your function page and developing your function.
+
 ## Reference
 
 ### Directory structure reference
