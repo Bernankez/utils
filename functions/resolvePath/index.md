@@ -13,5 +13,3 @@ import { resolvePath } from "@bernankez/utils/node";
 
 const { __dirname, __filename, root, require } = resolvePath(import.meta.url);
 ```
-
-

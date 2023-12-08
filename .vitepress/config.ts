@@ -4,6 +4,7 @@ import type { DefaultTheme } from "vitepress";
 import { defineConfig } from "vitepress";
 import UnoCSS from "unocss/vite";
 import { categoriesOrder, functionsWithCategory } from "../metadata/functions";
+import { version } from "../package.json";
 import { markdownTransform } from "./plugins/markdownTransform";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -24,6 +25,15 @@ export default defineConfig({
         text: "Functions",
         items: [
           ...(getFunctionsSidebar() as DefaultTheme.NavItemChildren[]),
+        ],
+      },
+      {
+        text: `v${version}`,
+        items: [
+          {
+            text: "Release Notes",
+            link: "https://github.com/Bernankez/utils/releases",
+          },
         ],
       },
     ],
@@ -65,6 +75,7 @@ function getGuideSidebar() {
     text: "Guide",
     items: [
       { text: "Getting Started", link: "/guide/" },
+      { text: "Contributing", link: "/guide/contributing" },
     ],
   };
 }
