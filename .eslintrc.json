@@ -2,5 +2,8 @@
   "extends": ["@bernankez", "@bernankez/unocss"],
   "ignorePatterns": [
     "**/.vitepress/cache"
-  ]
+  ],
+  "rules": {
+    "prefer-promise-reject-errors": "warn"
+  }
 }
