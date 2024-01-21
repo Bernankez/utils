@@ -1,5 +1,24 @@
 [
   {
+    "path": "functions/Awaitable",
+    "name": "Awaitable",
+    "lastUpdated": {
+      "typescript": 0
+    },
+    "file": {
+      "doc": "index.md",
+      "typescript": "index.typescript.ts"
+    },
+    "source": {
+      "doc": "https://github.com/Bernankez/utils/blob/master/functions/Awaitable/index.md",
+      "typescript": "https://github.com/Bernankez/utils/blob/master/functions/Awaitable/index.typescript.ts"
+    },
+    "url": {
+      "doc": "https://utils.keke.cc/functions/Awaitable/"
+    },
+    "category": "Type"
+  },
+  {
     "path": "functions/Prettier",
     "name": "Prettier",
     "lastUpdated": {
@@ -17,6 +36,27 @@
       "doc": "https://utils.keke.cc/functions/Prettier/"
     },
     "category": "Type"
+  },
+  {
+    "path": "functions/awaitPromise",
+    "name": "awaitPromise",
+    "lastUpdated": {
+      "index": 0
+    },
+    "file": {
+      "doc": "index.md",
+      "test": "index.test.ts",
+      "index": "index.ts"
+    },
+    "source": {
+      "doc": "https://github.com/Bernankez/utils/blob/master/functions/awaitPromise/index.md",
+      "test": "https://github.com/Bernankez/utils/blob/master/functions/awaitPromise/index.test.ts",
+      "index": "https://github.com/Bernankez/utils/blob/master/functions/awaitPromise/index.ts"
+    },
+    "url": {
+      "doc": "https://utils.keke.cc/functions/awaitPromise/"
+    },
+    "category": "Processing"
   },
   {
     "path": "functions/isDefined",
