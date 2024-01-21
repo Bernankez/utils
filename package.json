@@ -115,7 +115,7 @@
     "simple-git": "^3.20.0",
     "simple-git-hooks": "^2.9.0",
     "stylelint": "^15.10.3",
-    "tsx": "^3.13.0",
+    "tsx": "^4.7.0",
     "typescript": "^5.2.2",
     "unbuild": "^2.0.0",
     "unocss": "^0.56.5",
