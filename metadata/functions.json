@@ -3,7 +3,7 @@
     "path": "functions/Awaitable",
     "name": "Awaitable",
     "lastUpdated": {
-      "typescript": 0
+      "typescript": 1705846424000
     },
     "file": {
       "doc": "index.md",
@@ -41,7 +41,7 @@
     "path": "functions/awaitPromise",
     "name": "awaitPromise",
     "lastUpdated": {
-      "index": 0
+      "index": 1705846424000
     },
     "file": {
       "doc": "index.md",
@@ -99,6 +99,27 @@
       "doc": "https://utils.keke.cc/functions/isNumber/"
     },
     "category": "Validation"
+  },
+  {
+    "path": "functions/log",
+    "name": "log",
+    "lastUpdated": {
+      "index": 0
+    },
+    "file": {
+      "doc": "index.md",
+      "demo": "demo.vue",
+      "index": "index.ts"
+    },
+    "source": {
+      "doc": "https://github.com/Bernankez/utils/blob/master/functions/log/index.md",
+      "demo": "https://github.com/Bernankez/utils/blob/master/functions/log/demo.vue",
+      "index": "https://github.com/Bernankez/utils/blob/master/functions/log/index.ts"
+    },
+    "url": {
+      "doc": "https://utils.keke.cc/functions/log/"
+    },
+    "category": "Stuff"
   },
   {
     "path": "functions/makeDestructurable",

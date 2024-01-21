@@ -13,6 +13,7 @@ function getFunctions() {
   const categoriesOrder = [
     "Alternative",
     "Processing",
+    "Stuff",
     "Validation",
     "Vue",
     "Type",
