@@ -1,3 +1,4 @@
+export * from "./isBrowser";
 export * from "./isDefined";
 export * from "./isNumber";
 export * from "./masking";

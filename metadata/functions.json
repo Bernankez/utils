@@ -59,6 +59,25 @@
     "category": "Processing"
   },
   {
+    "path": "functions/isBrowser",
+    "name": "isBrowser",
+    "lastUpdated": {
+      "index": 0
+    },
+    "file": {
+      "doc": "index.md",
+      "index": "index.ts"
+    },
+    "source": {
+      "doc": "https://github.com/Bernankez/utils/blob/master/functions/isBrowser/index.md",
+      "index": "https://github.com/Bernankez/utils/blob/master/functions/isBrowser/index.ts"
+    },
+    "url": {
+      "doc": "https://utils.keke.cc/functions/isBrowser/"
+    },
+    "category": "Validation"
+  },
+  {
     "path": "functions/isDefined",
     "name": "isDefined",
     "lastUpdated": {
