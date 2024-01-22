@@ -96,7 +96,6 @@
     }
   },
   "dependencies": {
-    "ansi-colors": "^4.1.3",
     "vue-demi": "latest"
   },
   "devDependencies": {
@@ -106,6 +105,7 @@
     "@iconify/json": "^2.2.128",
     "@types/node": "^20.8.4",
     "@unocss/reset": "^0.56.5",
+    "ansi-colors": "^4.1.3",
     "bumpp": "^9.2.0",
     "dayjs": "^1.11.10",
     "eslint": "^8.51.0",

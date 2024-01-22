@@ -62,7 +62,7 @@
     "path": "functions/isBrowser",
     "name": "isBrowser",
     "lastUpdated": {
-      "index": 0
+      "index": 1705902562000
     },
     "file": {
       "doc": "index.md",
@@ -123,7 +123,7 @@
     "path": "functions/log",
     "name": "log",
     "lastUpdated": {
-      "index": 1705848744000
+      "index": 1705902699000
     },
     "file": {
       "doc": "index.md",
