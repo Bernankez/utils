@@ -26,4 +26,11 @@ describe("awaitPromise", () => {
 
     expect(error).toBe(1);
   });
+
+  it("status", async () => {
+    const { status } = await awaitPromise(Promise.resolve(1));
+    const [_d, _e, status1] = await awaitPromise(Promise.reject(1));
+    expect(status).toBe("fulfilled");
+    expect(status1).toBe("rejected");
+  });
 });

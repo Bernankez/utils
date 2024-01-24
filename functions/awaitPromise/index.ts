@@ -5,11 +5,11 @@ export function awaitPromise<T extends Awaitable<any>, E = any>(promise: Promise
   return Promise.resolve(promise)
     .then(data =>
       makeDestructurable(
-        { data, error: null } as { data: T; error: null },
-        [data, null] as [T, null]),
+        { data, error: null, status: "fulfilled" } as { data: T; error: null; status: "fulfilled" },
+        [data, null, "fulfilled"] as [T, null, "fulfilled"]),
     )
     .catch(error => makeDestructurable(
-      { data: null, error } as { data: null; error: E },
-      [null, error] as [null, E]),
+      { data: null, error, status: "rejected" } as { data: null; error: E; status: "rejected" },
+      [null, error, "rejected"] as [null, E, "rejected"]),
     );
 }
