@@ -225,6 +225,25 @@
     "category": "Vue"
   },
   {
+    "path": "functions/useMergedState",
+    "name": "useMergedState",
+    "lastUpdated": {
+      "vuejs": 0
+    },
+    "file": {
+      "doc": "index.md",
+      "vuejs": "index.vuejs.ts"
+    },
+    "source": {
+      "doc": "https://github.com/Bernankez/utils/blob/master/functions/useMergedState/index.md",
+      "vuejs": "https://github.com/Bernankez/utils/blob/master/functions/useMergedState/index.vuejs.ts"
+    },
+    "url": {
+      "doc": "https://utils.keke.cc/functions/useMergedState/"
+    },
+    "category": "Vue"
+  },
+  {
     "path": "functions/useMounted",
     "name": "useMounted",
     "lastUpdated": {
