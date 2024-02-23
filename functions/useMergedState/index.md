@@ -29,7 +29,7 @@ const emit = defineEmits<{
 const controlled = computed(() => props.modelValue);
 const uncontrolled = ref(props.defaultValue);
 const mergedState = useMergedState(controlled, uncontrolled, (value) => {
-  if (value) {
+  if (value !== undefined) {
     emit("update:modelValue", value);
   }
 });
@@ -55,7 +55,7 @@ const emit = defineEmits<{
 
 const controlled = computed({
   get: () => props.modelValue,
-  set: value => value && emit("update:modelValue", value)
+  set: value => value !== undefined && emit("update:modelValue", value)
 });
 const uncontrolled = ref(props.defaultValue);
 const mergedState = useMergedState(controlled, uncontrolled);
