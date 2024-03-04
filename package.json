@@ -27,19 +27,19 @@
       "import": "./dist/index.mjs"
     },
     "./node": {
-      "types": "./dist/node.d.ts",
-      "require": "./dist/node.cjs",
-      "import": "./dist/node.mjs"
+      "types": "./dist/node/index.d.ts",
+      "require": "./dist/node/index.cjs",
+      "import": "./dist/node/index.mjs"
     },
     "./browser": {
-      "types": "./dist/browser.d.ts",
-      "require": "./dist/browser.cjs",
-      "import": "./dist/browser.mjs"
+      "types": "./dist/browser/index.d.ts",
+      "require": "./dist/browser/index.cjs",
+      "import": "./dist/browser/index.mjs"
     },
     "./vue": {
-      "types": "./dist/vue.d.ts",
-      "require": "./dist/vue.cjs",
-      "import": "./dist/vue.mjs"
+      "types": "./dist/vue/index.d.ts",
+      "require": "./dist/vue/index.cjs",
+      "import": "./dist/vue/index.mjs"
     },
     "./resolver": {
       "types": "./dist/resolver.d.ts",

@@ -3,12 +3,11 @@ import { fileURLToPath } from "node:url";
 import type { DefaultTheme } from "vitepress";
 import { defineConfig } from "vitepress";
 import UnoCSS from "unocss/vite";
-import { categoriesOrder, functionsWithCategory, functionsWithoutCategory } from "../metadata/functions";
+import { functionsWithCategory, functionsWithoutCategory } from "../metadata/functions";
 import { version } from "../package.json";
-import { markdownTransform } from "./plugins/markdownTransform";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const DIR_ROOT = resolve(__dirname, "..");
+const dirRoot = resolve(__dirname, "..");
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -56,15 +55,17 @@ export default defineConfig({
     logo: "/package.svg",
   },
   vite: {
-    plugins: [UnoCSS(), markdownTransform()],
+    plugins: [UnoCSS(),
+      // markdownTransform()
+    ],
     resolve: {
       alias: {
-        "@": join(DIR_ROOT, "./functions"),
-        "~": join(DIR_ROOT, "./"),
-        "@bernankez/utils": join(DIR_ROOT, "./functions"),
-        "@bernankez/utils/node": join(DIR_ROOT, "./functions/node.ts"),
-        "@bernankez/utils/browser": join(DIR_ROOT, "./functions/browser.ts"),
-        "@bernankez/utils/vue": join(DIR_ROOT, "./functions/vue.ts"),
+        "@": join(dirRoot, "./functions"),
+        "~": join(dirRoot, "./"),
+        "@bernankez/utils": join(dirRoot, "./functions"),
+        "@bernankez/utils/node": join(dirRoot, "./functions/node/index.ts"),
+        "@bernankez/utils/browser": join(dirRoot, "./functions/browser/index.ts"),
+        "@bernankez/utils/vue": join(dirRoot, "./functions/vue/index.ts"),
       },
     },
   },
@@ -82,25 +83,23 @@ function getGuideSidebar() {
 
 function getFunctionsSidebar() {
   const links: DefaultTheme.Sidebar = [];
-  for (const category of categoriesOrder) {
-    if (functionsWithCategory[category]) {
-      links.push({
-        text: category,
-        items: functionsWithCategory[category].map(func => ({
-          text: func.name,
-          link: `/functions/${func.name}/`,
-        })),
-      });
-    }
+  for (const category of functionsWithCategory) {
+    links.push({
+      text: category[0],
+      items: category[1].map(func => ({
+        text: func.name,
+        link: `/${func.path}/`,
+      })),
+    });
   }
   return [
     { text: "All functions", link: "/functions/" },
     functionsWithoutCategory.length
       ? {
-          text: "Ungrouped",
+          text: "Non Category",
           items: functionsWithoutCategory.map(func => ({
             text: func.name,
-            link: `/functions/${func.name}/`,
+            link: `/${func.path}/`,
           })),
         }
       : undefined!,

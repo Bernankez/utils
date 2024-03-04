@@ -15,9 +15,9 @@
       "@/*": ["functions/*"],
       "~/*": ["./*"],
       "@bernankez/utils": ["functions/index.ts"],
-      "@bernankez/utils/node": ["functions/node.ts"],
-      "@bernankez/utils/browser": ["functions/browser.ts"],
-      "@bernankez/utils/vue": ["functions/vue.ts"]
+      "@bernankez/utils/node": ["functions/node/index.ts"],
+      "@bernankez/utils/browser": ["functions/browser/index.ts"],
+      "@bernankez/utils/vue": ["functions/vue/index.ts"]
     }
   },
   "include": ["functions/**/*.ts", "metadata/**/*.ts", "**/*.md", ".vitepress/**/*.ts", ".vitepress/**/*.vue", "functions/**/*.vue"],

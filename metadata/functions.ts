@@ -1,5 +1,5 @@
 import _functions from "./functions.json";
-import type { UtilFunction } from "./update";
+import { type UtilFunction } from "./utils";
 
 export const functions = _functions as unknown as UtilFunction[];
 
@@ -10,38 +10,36 @@ export function getFunction(name: string) {
 }
 
 function getFunctions() {
-  const categoriesOrder = [
-    "Alternative",
-    "Processing",
-    "Stuff",
-    "Validation",
-    "Vue",
-    "Type",
-  ];
-  const functionsWithCategory = {} as Record<string, UtilFunction[]>;
+  const categories = new Set<string>();
+  functions.forEach((func) => {
+    if (func.additions.category) {
+      categories.add(func.additions.category);
+    }
+  });
+  const functionsWithCategory: [string, UtilFunction[]][] = [];
   const functionsWithoutCategory: UtilFunction[] = [];
   for (const func of functions) {
-    if (!func.category) {
+    if (!func.additions.category) {
       functionsWithoutCategory.push(func);
       continue;
     }
-    if (!categoriesOrder.includes(func.category)) {
-      categoriesOrder.push(func.category);
+    const category = functionsWithCategory.find(([category]) => category === func.additions.category);
+    if (category) {
+      category[1].push(func);
+    } else {
+      functionsWithCategory.push([func.additions.category, [func]]);
     }
-    if (!functionsWithCategory[func.category]) {
-      functionsWithCategory[func.category] = [];
-    }
-    functionsWithCategory[func.category].push(func);
   }
-  for (const category in functionsWithCategory) {
-    functionsWithCategory[category] = functionsWithCategory[category].sort((a, b) => a.name.localeCompare(b.name));
-  }
-
+  functionsWithCategory.sort(([a], [b]) => a.localeCompare(b));
+  functionsWithCategory.forEach(([, funcs]) => {
+    funcs.sort((a, b) => a.name.localeCompare(b.name));
+  });
+  functionsWithoutCategory.sort((a, b) => a.name.localeCompare(b.name));
   return {
-    categoriesOrder,
+    categories: Array.from(categories).sort(),
     functionsWithCategory,
     functionsWithoutCategory,
   };
 }
 
-export const { categoriesOrder, functionsWithCategory, functionsWithoutCategory } = getFunctions();
+export const { categories, functionsWithCategory, functionsWithoutCategory } = getFunctions();

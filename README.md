@@ -10,6 +10,16 @@
   </samp>
 </h3>
 
+> [!WARNING]
+> Refactoring
+> Todo
+- [x] .vitepress/config.ts
+- [ ] .vitepress/plugins
+- [ ] .vitepress/components/FunctionInfo.vue
+- [x] .vitepress/components/FunctionList.vue
+- [ ] functions/resolver.ts
+- [ ] guide/contributing.md
+
 ## Install
 
 ```bash

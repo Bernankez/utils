@@ -4,7 +4,7 @@
       <div class="title">
         Category
       </div>
-      {{ func?.category }}
+      {{ func?.additions.category }}
     </div>
     <div class="info">
       <div class="title">

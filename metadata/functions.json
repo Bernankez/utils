@@ -1,286 +1,378 @@
 [
   {
-    "path": "functions/Awaitable",
+    "path": "functions/core/Awaitable",
     "name": "Awaitable",
-    "lastUpdated": {
-      "typescript": 1705846424000
+    "doc": "https://utils.keke.cc/functions/core/Awaitable/",
+    "entry": "core",
+    "additions": {
+      "category": "Type"
     },
-    "file": {
-      "doc": "index.md",
-      "typescript": "index.typescript.ts"
-    },
-    "source": {
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/Awaitable/index.md",
-      "typescript": "https://github.com/Bernankez/utils/blob/master/functions/Awaitable/index.typescript.ts"
-    },
-    "url": {
-      "doc": "https://utils.keke.cc/functions/Awaitable/"
-    },
-    "category": "Type"
+    "files": [
+      {
+        "type": "doc",
+        "filename": "index.md",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/Awaitable/index.md",
+        "lastUpdated": 0
+      },
+      {
+        "type": "lib",
+        "filename": "index.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/Awaitable/index.ts",
+        "lastUpdated": 0
+      }
+    ]
   },
   {
-    "path": "functions/Prettier",
+    "path": "functions/core/Prettier",
     "name": "Prettier",
-    "lastUpdated": {
-      "typescript": 1697702434000
+    "doc": "https://utils.keke.cc/functions/core/Prettier/",
+    "entry": "core",
+    "additions": {
+      "category": "Type"
     },
-    "file": {
-      "doc": "index.md",
-      "typescript": "index.typescript.ts"
-    },
-    "source": {
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/Prettier/index.md",
-      "typescript": "https://github.com/Bernankez/utils/blob/master/functions/Prettier/index.typescript.ts"
-    },
-    "url": {
-      "doc": "https://utils.keke.cc/functions/Prettier/"
-    },
-    "category": "Type"
+    "files": [
+      {
+        "type": "doc",
+        "filename": "index.md",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/Prettier/index.md",
+        "lastUpdated": 0
+      },
+      {
+        "type": "lib",
+        "filename": "index.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/Prettier/index.ts",
+        "lastUpdated": 0
+      }
+    ]
   },
   {
-    "path": "functions/awaitPromise",
+    "path": "functions/core/awaitPromise",
     "name": "awaitPromise",
-    "lastUpdated": {
-      "index": 1706079148000
+    "doc": "https://utils.keke.cc/functions/core/awaitPromise/",
+    "entry": "core",
+    "additions": {
+      "category": "Processing"
     },
-    "file": {
-      "doc": "index.md",
-      "test": "index.test.ts",
-      "index": "index.ts"
-    },
-    "source": {
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/awaitPromise/index.md",
-      "test": "https://github.com/Bernankez/utils/blob/master/functions/awaitPromise/index.test.ts",
-      "index": "https://github.com/Bernankez/utils/blob/master/functions/awaitPromise/index.ts"
-    },
-    "url": {
-      "doc": "https://utils.keke.cc/functions/awaitPromise/"
-    },
-    "category": "Processing"
+    "files": [
+      {
+        "type": "doc",
+        "filename": "index.md",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/awaitPromise/index.md",
+        "lastUpdated": 0
+      },
+      {
+        "type": "test",
+        "filename": "index.test.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/awaitPromise/index.test.ts",
+        "lastUpdated": 0
+      },
+      {
+        "type": "lib",
+        "filename": "index.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/awaitPromise/index.ts",
+        "lastUpdated": 0
+      }
+    ]
   },
   {
-    "path": "functions/isBrowser",
+    "path": "functions/core/isBrowser",
     "name": "isBrowser",
-    "lastUpdated": {
-      "index": 1705902562000
+    "doc": "https://utils.keke.cc/functions/core/isBrowser/",
+    "entry": "core",
+    "additions": {
+      "category": "Validation"
     },
-    "file": {
-      "doc": "index.md",
-      "index": "index.ts"
-    },
-    "source": {
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/isBrowser/index.md",
-      "index": "https://github.com/Bernankez/utils/blob/master/functions/isBrowser/index.ts"
-    },
-    "url": {
-      "doc": "https://utils.keke.cc/functions/isBrowser/"
-    },
-    "category": "Validation"
+    "files": [
+      {
+        "type": "doc",
+        "filename": "index.md",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/isBrowser/index.md",
+        "lastUpdated": 0
+      },
+      {
+        "type": "lib",
+        "filename": "index.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/isBrowser/index.ts",
+        "lastUpdated": 0
+      }
+    ]
   },
   {
-    "path": "functions/isDefined",
+    "path": "functions/core/isDefined",
     "name": "isDefined",
-    "lastUpdated": {
-      "index": 1697192021000
+    "doc": "https://utils.keke.cc/functions/core/isDefined/",
+    "entry": "core",
+    "additions": {
+      "category": "Validation"
     },
-    "file": {
-      "doc": "index.md",
-      "test": "index.test.ts",
-      "index": "index.ts"
-    },
-    "source": {
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/isDefined/index.md",
-      "test": "https://github.com/Bernankez/utils/blob/master/functions/isDefined/index.test.ts",
-      "index": "https://github.com/Bernankez/utils/blob/master/functions/isDefined/index.ts"
-    },
-    "url": {
-      "doc": "https://utils.keke.cc/functions/isDefined/"
-    },
-    "category": "Validation"
+    "files": [
+      {
+        "type": "doc",
+        "filename": "index.md",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/isDefined/index.md",
+        "lastUpdated": 0
+      },
+      {
+        "type": "test",
+        "filename": "index.test.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/isDefined/index.test.ts",
+        "lastUpdated": 0
+      },
+      {
+        "type": "lib",
+        "filename": "index.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/isDefined/index.ts",
+        "lastUpdated": 0
+      }
+    ]
   },
   {
-    "path": "functions/isNumber",
+    "path": "functions/core/isNumber",
     "name": "isNumber",
-    "lastUpdated": {
-      "index": 1697192021000
+    "doc": "https://utils.keke.cc/functions/core/isNumber/",
+    "entry": "core",
+    "additions": {
+      "category": "Validation"
     },
-    "file": {
-      "doc": "index.md",
-      "test": "index.test.ts",
-      "index": "index.ts"
-    },
-    "source": {
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/isNumber/index.md",
-      "test": "https://github.com/Bernankez/utils/blob/master/functions/isNumber/index.test.ts",
-      "index": "https://github.com/Bernankez/utils/blob/master/functions/isNumber/index.ts"
-    },
-    "url": {
-      "doc": "https://utils.keke.cc/functions/isNumber/"
-    },
-    "category": "Validation"
+    "files": [
+      {
+        "type": "doc",
+        "filename": "index.md",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/isNumber/index.md",
+        "lastUpdated": 0
+      },
+      {
+        "type": "test",
+        "filename": "index.test.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/isNumber/index.test.ts",
+        "lastUpdated": 0
+      },
+      {
+        "type": "lib",
+        "filename": "index.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/isNumber/index.ts",
+        "lastUpdated": 0
+      }
+    ]
   },
   {
-    "path": "functions/log",
+    "path": "functions/core/log",
     "name": "log",
-    "lastUpdated": {
-      "index": 1705902699000
+    "doc": "https://utils.keke.cc/functions/core/log/",
+    "entry": "core",
+    "additions": {
+      "category": "Stuff"
     },
-    "file": {
-      "doc": "index.md",
-      "demo": "demo.vue",
-      "index": "index.ts"
-    },
-    "source": {
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/log/index.md",
-      "demo": "https://github.com/Bernankez/utils/blob/master/functions/log/demo.vue",
-      "index": "https://github.com/Bernankez/utils/blob/master/functions/log/index.ts"
-    },
-    "url": {
-      "doc": "https://utils.keke.cc/functions/log/"
-    },
-    "category": "Stuff"
+    "files": [
+      {
+        "type": "demo",
+        "filename": "demo.vue",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/log/demo.vue",
+        "lastUpdated": 0
+      },
+      {
+        "type": "doc",
+        "filename": "index.md",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/log/index.md",
+        "lastUpdated": 0
+      },
+      {
+        "type": "lib",
+        "filename": "index.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/log/index.ts",
+        "lastUpdated": 0
+      }
+    ]
   },
   {
-    "path": "functions/makeDestructurable",
+    "path": "functions/core/makeDestructurable",
     "name": "makeDestructurable",
-    "lastUpdated": {
-      "index": 1697706614000
+    "doc": "https://utils.keke.cc/functions/core/makeDestructurable/",
+    "entry": "core",
+    "additions": {
+      "category": "Processing"
     },
-    "file": {
-      "doc": "index.md",
-      "index": "index.ts"
-    },
-    "source": {
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/makeDestructurable/index.md",
-      "index": "https://github.com/Bernankez/utils/blob/master/functions/makeDestructurable/index.ts"
-    },
-    "url": {
-      "doc": "https://utils.keke.cc/functions/makeDestructurable/"
-    },
-    "category": "Processing"
+    "files": [
+      {
+        "type": "doc",
+        "filename": "index.md",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/makeDestructurable/index.md",
+        "lastUpdated": 0
+      },
+      {
+        "type": "lib",
+        "filename": "index.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/makeDestructurable/index.ts",
+        "lastUpdated": 0
+      }
+    ]
   },
   {
-    "path": "functions/masking",
+    "path": "functions/core/masking",
     "name": "masking",
-    "lastUpdated": {
-      "index": 1697192021000
+    "doc": "https://utils.keke.cc/functions/core/masking/",
+    "entry": "core",
+    "additions": {
+      "category": "Processing"
     },
-    "file": {
-      "doc": "index.md",
-      "demo": "demo.vue",
-      "test": "index.test.ts",
-      "index": "index.ts"
-    },
-    "source": {
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/masking/index.md",
-      "demo": "https://github.com/Bernankez/utils/blob/master/functions/masking/demo.vue",
-      "test": "https://github.com/Bernankez/utils/blob/master/functions/masking/index.test.ts",
-      "index": "https://github.com/Bernankez/utils/blob/master/functions/masking/index.ts"
-    },
-    "url": {
-      "doc": "https://utils.keke.cc/functions/masking/"
-    },
-    "category": "Processing"
+    "files": [
+      {
+        "type": "demo",
+        "filename": "demo.vue",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/masking/demo.vue",
+        "lastUpdated": 0
+      },
+      {
+        "type": "doc",
+        "filename": "index.md",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/masking/index.md",
+        "lastUpdated": 0
+      },
+      {
+        "type": "test",
+        "filename": "index.test.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/masking/index.test.ts",
+        "lastUpdated": 0
+      },
+      {
+        "type": "lib",
+        "filename": "index.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/masking/index.ts",
+        "lastUpdated": 0
+      }
+    ]
   },
   {
-    "path": "functions/resolvePath",
+    "path": "functions/node/resolvePath",
     "name": "resolvePath",
-    "lastUpdated": {
-      "node": 1697702615000
+    "doc": "https://utils.keke.cc/functions/node/resolvePath/",
+    "entry": "node",
+    "additions": {
+      "category": "Alternative"
     },
-    "file": {
-      "doc": "index.md",
-      "test": "index.test.ts",
-      "node": "index.node.ts"
-    },
-    "source": {
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.md",
-      "test": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.test.ts",
-      "node": "https://github.com/Bernankez/utils/blob/master/functions/resolvePath/index.node.ts"
-    },
-    "url": {
-      "doc": "https://utils.keke.cc/functions/resolvePath/"
-    },
-    "category": "Alternative"
+    "files": [
+      {
+        "type": "doc",
+        "filename": "index.md",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/node/resolvePath/index.md",
+        "lastUpdated": 0
+      },
+      {
+        "type": "test",
+        "filename": "index.test.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/node/resolvePath/index.test.ts",
+        "lastUpdated": 0
+      },
+      {
+        "type": "lib",
+        "filename": "index.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/node/resolvePath/index.ts",
+        "lastUpdated": 0
+      }
+    ]
   },
   {
-    "path": "functions/tryUntilMounted",
+    "path": "functions/vue/tryUntilMounted",
     "name": "tryUntilMounted",
-    "lastUpdated": {
-      "vuejs": 1697646702000
+    "doc": "https://utils.keke.cc/functions/vue/tryUntilMounted/",
+    "entry": "vue",
+    "additions": {
+      "category": "Vue"
     },
-    "file": {
-      "doc": "index.md",
-      "demo": "demo.vue",
-      "vuejs": "index.vuejs.ts"
-    },
-    "source": {
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/tryUntilMounted/index.md",
-      "demo": "https://github.com/Bernankez/utils/blob/master/functions/tryUntilMounted/demo.vue",
-      "vuejs": "https://github.com/Bernankez/utils/blob/master/functions/tryUntilMounted/index.vuejs.ts"
-    },
-    "url": {
-      "doc": "https://utils.keke.cc/functions/tryUntilMounted/"
-    },
-    "category": "Vue"
+    "files": [
+      {
+        "type": "demo",
+        "filename": "demo.vue",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/demo.vue",
+        "lastUpdated": 0
+      },
+      {
+        "type": "doc",
+        "filename": "index.md",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/index.md",
+        "lastUpdated": 0
+      },
+      {
+        "type": "lib",
+        "filename": "index.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/index.ts",
+        "lastUpdated": 0
+      }
+    ]
   },
   {
-    "path": "functions/useMergedState",
+    "path": "functions/vue/useMergedState",
     "name": "useMergedState",
-    "lastUpdated": {
-      "vuejs": 1708595183000
+    "doc": "https://utils.keke.cc/functions/vue/useMergedState/",
+    "entry": "vue",
+    "additions": {
+      "category": "Vue"
     },
-    "file": {
-      "doc": "index.md",
-      "vuejs": "index.vuejs.ts"
-    },
-    "source": {
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/useMergedState/index.md",
-      "vuejs": "https://github.com/Bernankez/utils/blob/master/functions/useMergedState/index.vuejs.ts"
-    },
-    "url": {
-      "doc": "https://utils.keke.cc/functions/useMergedState/"
-    },
-    "category": "Vue"
+    "files": [
+      {
+        "type": "doc",
+        "filename": "index.md",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/useMergedState/index.md",
+        "lastUpdated": 0
+      },
+      {
+        "type": "lib",
+        "filename": "index.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/useMergedState/index.ts",
+        "lastUpdated": 0
+      }
+    ]
   },
   {
-    "path": "functions/useMounted",
+    "path": "functions/vue/useMounted",
     "name": "useMounted",
-    "lastUpdated": {
-      "vuejs": 1697646702000
+    "doc": "https://utils.keke.cc/functions/vue/useMounted/",
+    "entry": "vue",
+    "additions": {
+      "category": "Vue"
     },
-    "file": {
-      "doc": "index.md",
-      "vuejs": "index.vuejs.ts"
-    },
-    "source": {
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/useMounted/index.md",
-      "vuejs": "https://github.com/Bernankez/utils/blob/master/functions/useMounted/index.vuejs.ts"
-    },
-    "url": {
-      "doc": "https://utils.keke.cc/functions/useMounted/"
-    },
-    "category": "Vue"
+    "files": [
+      {
+        "type": "doc",
+        "filename": "index.md",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/useMounted/index.md",
+        "lastUpdated": 0
+      },
+      {
+        "type": "lib",
+        "filename": "index.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/useMounted/index.ts",
+        "lastUpdated": 0
+      }
+    ]
   },
   {
-    "path": "functions/waitUntilMounted",
+    "path": "functions/vue/waitUntilMounted",
     "name": "waitUntilMounted",
-    "lastUpdated": {
-      "vuejs": 1697646702000
+    "doc": "https://utils.keke.cc/functions/vue/waitUntilMounted/",
+    "entry": "vue",
+    "additions": {
+      "category": "Vue"
     },
-    "file": {
-      "doc": "index.md",
-      "demo": "demo.vue",
-      "vuejs": "index.vuejs.ts"
-    },
-    "source": {
-      "doc": "https://github.com/Bernankez/utils/blob/master/functions/waitUntilMounted/index.md",
-      "demo": "https://github.com/Bernankez/utils/blob/master/functions/waitUntilMounted/demo.vue",
-      "vuejs": "https://github.com/Bernankez/utils/blob/master/functions/waitUntilMounted/index.vuejs.ts"
-    },
-    "url": {
-      "doc": "https://utils.keke.cc/functions/waitUntilMounted/"
-    },
-    "category": "Vue"
+    "files": [
+      {
+        "type": "demo",
+        "filename": "demo.vue",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/waitUntilMounted/demo.vue",
+        "lastUpdated": 0
+      },
+      {
+        "type": "doc",
+        "filename": "index.md",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/waitUntilMounted/index.md",
+        "lastUpdated": 0
+      },
+      {
+        "type": "lib",
+        "filename": "index.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/waitUntilMounted/index.ts",
+        "lastUpdated": 0
+      }
+    ]
   }
 ]
