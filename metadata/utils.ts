@@ -43,7 +43,3 @@ export interface FunctionFile {
 function asConst<T extends string[]>(t: [...T]) {
   return t;
 }
-
-// function normalizePath(path: string) {
-//   return path.replace(/\\/g, "/");
-// }
