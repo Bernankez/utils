@@ -21,7 +21,7 @@ async function readFunctionMetadata() {
             files.push({
               type,
               filename: child,
-              source: githubRepo + relative(dirRoot, join(dirPath, child)),
+              source: githubRepo + relative(dirRoot, resolve(dirPath, child)),
               lastUpdated: +await git.raw(["log", "-1", "--format=%at", join(dirPath, child)]) * 1000,
             });
           }
