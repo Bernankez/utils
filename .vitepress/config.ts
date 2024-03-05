@@ -5,6 +5,7 @@ import { defineConfig } from "vitepress";
 import UnoCSS from "unocss/vite";
 import { functionsWithCategory, functionsWithoutCategory } from "../metadata/functions";
 import { version } from "../package.json";
+import { markdownTransform } from "./plugins/markdownTransform";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const dirRoot = resolve(__dirname, "..");
@@ -55,9 +56,7 @@ export default defineConfig({
     logo: "/package.svg",
   },
   vite: {
-    plugins: [UnoCSS(),
-      // markdownTransform()
-    ],
+    plugins: [UnoCSS(), markdownTransform()],
     resolve: {
       alias: {
         "@": join(dirRoot, "./functions"),

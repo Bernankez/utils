@@ -12,13 +12,13 @@
         "type": "doc",
         "filename": "index.md",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/Awaitable/index.md",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "lib",
         "filename": "index.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/Awaitable/index.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       }
     ]
   },
@@ -35,13 +35,13 @@
         "type": "doc",
         "filename": "index.md",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/Prettier/index.md",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "lib",
         "filename": "index.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/Prettier/index.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       }
     ]
   },
@@ -58,19 +58,19 @@
         "type": "doc",
         "filename": "index.md",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/awaitPromise/index.md",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "test",
         "filename": "index.test.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/awaitPromise/index.test.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "lib",
         "filename": "index.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/awaitPromise/index.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       }
     ]
   },
@@ -87,13 +87,13 @@
         "type": "doc",
         "filename": "index.md",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/isBrowser/index.md",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "lib",
         "filename": "index.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/isBrowser/index.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       }
     ]
   },
@@ -110,19 +110,19 @@
         "type": "doc",
         "filename": "index.md",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/isDefined/index.md",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "test",
         "filename": "index.test.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/isDefined/index.test.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "lib",
         "filename": "index.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/isDefined/index.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       }
     ]
   },
@@ -139,19 +139,19 @@
         "type": "doc",
         "filename": "index.md",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/isNumber/index.md",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "test",
         "filename": "index.test.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/isNumber/index.test.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "lib",
         "filename": "index.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/isNumber/index.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       }
     ]
   },
@@ -168,19 +168,19 @@
         "type": "demo",
         "filename": "demo.vue",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/log/demo.vue",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "doc",
         "filename": "index.md",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/log/index.md",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "lib",
         "filename": "index.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/log/index.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       }
     ]
   },
@@ -197,13 +197,13 @@
         "type": "doc",
         "filename": "index.md",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/makeDestructurable/index.md",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "lib",
         "filename": "index.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/makeDestructurable/index.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       }
     ]
   },
@@ -220,25 +220,25 @@
         "type": "demo",
         "filename": "demo.vue",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/masking/demo.vue",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "doc",
         "filename": "index.md",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/masking/index.md",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "test",
         "filename": "index.test.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/masking/index.test.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "lib",
         "filename": "index.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/masking/index.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       }
     ]
   },
@@ -255,19 +255,19 @@
         "type": "doc",
         "filename": "index.md",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/node/resolvePath/index.md",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "test",
         "filename": "index.test.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/node/resolvePath/index.test.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "lib",
         "filename": "index.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/node/resolvePath/index.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       }
     ]
   },
@@ -284,19 +284,19 @@
         "type": "demo",
         "filename": "demo.vue",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/demo.vue",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "doc",
         "filename": "index.md",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/index.md",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "lib",
         "filename": "index.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/index.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       }
     ]
   },
@@ -313,13 +313,13 @@
         "type": "doc",
         "filename": "index.md",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/useMergedState/index.md",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "lib",
         "filename": "index.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/useMergedState/index.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       }
     ]
   },
@@ -336,13 +336,13 @@
         "type": "doc",
         "filename": "index.md",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/useMounted/index.md",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "lib",
         "filename": "index.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/useMounted/index.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       }
     ]
   },
@@ -359,19 +359,19 @@
         "type": "demo",
         "filename": "demo.vue",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/waitUntilMounted/demo.vue",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "doc",
         "filename": "index.md",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/waitUntilMounted/index.md",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       },
       {
         "type": "lib",
         "filename": "index.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/vue/waitUntilMounted/index.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709545475000
       }
     ]
   }

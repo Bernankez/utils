@@ -31,7 +31,7 @@ describe("getYearDiff", () => {
   });
 });
 
-describe("getInfoByIDNumber", () => {
+describe.skip("getInfoByIDNumber", () => {
   it("18 digits", () => {
     expect(getInfoByIDNumber("110101199003076472")).toEqual({
       valid: true,

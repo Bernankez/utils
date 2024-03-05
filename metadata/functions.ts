@@ -1,5 +1,5 @@
 import _functions from "./functions.json";
-import { type UtilFunction } from "./utils";
+import { type FunctionFile, type UtilFunction } from "./utils";
 
 export const functions = _functions as unknown as UtilFunction[];
 
@@ -35,11 +35,21 @@ function getFunctions() {
     funcs.sort((a, b) => a.name.localeCompare(b.name));
   });
   functionsWithoutCategory.sort((a, b) => a.name.localeCompare(b.name));
+
+  function getCategory(category: string) {
+    return functionsWithCategory.find(([cat]) => cat === category)?.[1] ?? [];
+  }
+
   return {
     categories: Array.from(categories).sort(),
     functionsWithCategory,
     functionsWithoutCategory,
+    getCategory,
   };
 }
 
-export const { categories, functionsWithCategory, functionsWithoutCategory } = getFunctions();
+export function getFunctionFile(func: UtilFunction, type: FunctionFile["type"]) {
+  return func.files.find(file => file.type === type);
+}
+
+export const { categories, functionsWithCategory, functionsWithoutCategory, getCategory } = getFunctions();

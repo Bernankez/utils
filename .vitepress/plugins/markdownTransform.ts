@@ -1,5 +1,5 @@
 import type { Plugin } from "vitepress";
-import { functionNames, getFunction } from "../../metadata/functions";
+import { functionNames, getFunction, getFunctionFile } from "../../metadata/functions";
 
 export function markdownTransform(): Plugin {
   return {
@@ -18,7 +18,7 @@ export function markdownTransform(): Plugin {
             return _;
           }
           const fn = getFunction(name);
-          return `[\`${fn.name}\`](${fn.url.doc}) `;
+          return `[\`${fn.name}\`](${fn.doc}) `;
         },
       );
 
@@ -43,7 +43,7 @@ export function markdownTransform(): Plugin {
         const func = getFunction(name);
 
         let header = "";
-        const demoPath = func.file.demo;
+        const demoPath = func.files.find(file => file.type === "demo")?.filename;
         if (demoPath) {
           const demoSection = `
 <script setup>
@@ -52,7 +52,7 @@ import Demo from "./${demoPath}";
 
 ## Demo
 
-<DemoWrapper source=${func.source.demo}>
+<DemoWrapper source=${func.files.find(file => file.type === "demo")?.source}>
   <Demo />
 </DemoWrapper>
 `;
@@ -60,19 +60,14 @@ import Demo from "./${demoPath}";
         }
         code = code.slice(0, sliceIndex) + header + code.slice(sliceIndex);
 
-        const source = func.source;
         const footer = `
 ## Source
 
 ${[
-  source.index ? ["Source", source.index] : undefined,
-  source.browser ? ["Source(Browser)", source.browser] : undefined,
-  source.node ? ["Source(Node)", source.node] : undefined,
-  source.vuejs ? ["Source(Vue)", source.vuejs] : undefined,
-  source.typescript ? ["Source(Type)", source.typescript] : undefined,
-  source.demo ? ["Demo", source.demo] : undefined,
-  source.doc ? ["Docs", source.doc] : undefined,
-  source.test ? ["Tests", source.test] : undefined,
+  getFunctionFile(func, "lib") ? ["Source", getFunctionFile(func, "lib")!.source] : undefined,
+  getFunctionFile(func, "demo") ? ["Demo", getFunctionFile(func, "demo")!.source] : undefined,
+  getFunctionFile(func, "doc") ? ["Docs", getFunctionFile(func, "doc")!.source] : undefined,
+  getFunctionFile(func, "test") ? ["Tests", getFunctionFile(func, "test")!.source] : undefined,
 ].filter(item => !!item).map(src => `<a href="${src![1]}" target="_blank" style="text-decoration: none">${src![0]}</a>`)
           .join(" • ")}
 `;

@@ -29,7 +29,7 @@ export interface UtilFunction {
   path: string;
   doc: string;
   entry: FunctionEntry;
-  additions: Record<string, string>;
+  additions: { category?: string } & Record<string, string>;
   files: FunctionFile[];
 }
 
