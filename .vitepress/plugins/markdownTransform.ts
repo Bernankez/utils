@@ -17,7 +17,7 @@ export function markdownTransform(): Plugin {
           if (ending === "]") { // already a link
             return _;
           }
-          const fn = getFunction(name);
+          const fn = getFunction(name)!;
           return `[\`${fn.name}\`](${fn.doc}) `;
         },
       );
@@ -40,7 +40,7 @@ export function markdownTransform(): Plugin {
         const frontmatterEnds = code.indexOf("---\n\n");
         const firstHeader = code.search(/\n#{2,6}\s.+/);
         const sliceIndex = firstHeader < 0 ? frontmatterEnds < 0 ? 0 : frontmatterEnds + 4 : firstHeader;
-        const func = getFunction(name);
+        const func = getFunction(name)!;
 
         let header = "";
         const demoPath = func.files.find(file => file.type === "demo")?.filename;

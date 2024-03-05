@@ -37,7 +37,7 @@ const props = defineProps<{
   fn: string;
 }>();
 
-const func = computed(() => getFunction(props.fn));
+const func = computed(() => getFunction(props.fn)!);
 
 const envMap: Record<FunctionEntry, string> = {
   core: "Node & Browser",

@@ -6,7 +6,7 @@ export const functions = _functions as unknown as UtilFunction[];
 export const functionNames = _functions.map(func => func.name);
 
 export function getFunction(name: string) {
-  return functions.find(func => func.name === name) as UtilFunction;
+  return functions.find(func => func.name === name) as UtilFunction | undefined;
 }
 
 function getFunctions() {

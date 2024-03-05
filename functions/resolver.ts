@@ -6,18 +6,21 @@ export function UtilsResolver(): ResolverResultObject {
     type: "directive",
     resolve(name: string) {
       const func = getFunction(name);
-      if (func.entry === "core") {
-        return {
-          from: "@bernankez/utils",
-          name,
+      if (func) {
+        if (func.entry === "core") {
+          return {
+            from: "@bernankez/utils",
+            name,
           // type: func.additions.category === "Type",
-        };
-      } else {
-        return {
-          from: `@bernankez/utils/${func.entry}`,
-          name,
-        };
+          };
+        } else {
+          return {
+            from: `@bernankez/utils/${func.entry}`,
+            name,
+          };
+        }
       }
+      return undefined;
     },
   };
 }
