@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
 import matter from "gray-matter";
-import { type FunctionEntry, type FunctionFile, type FunctionFileType, type UtilFunction, __dirname, dirRoot, docUrl, functionEntries, functionFileMap, functionRoot, git, githubRepo } from "./utils";
+import { type FunctionEntry, type FunctionFile, type FunctionFileType, type UtilFunction, __dirname, dirRoot, docUrl, functionEntries, functionFileMap, functionRoot, git, githubRepo, normalizePath } from "./utils";
 
 async function readFunctionMetadata() {
   const functions: UtilFunction[] = [];
@@ -21,11 +21,11 @@ async function readFunctionMetadata() {
             files.push({
               type,
               filename: child,
-              source: githubRepo + relative(dirRoot, resolve(dirPath, child)),
+              source: githubRepo + normalizePath(relative(dirRoot, join(dirPath, child))),
               lastUpdated: +await git.raw(["log", "-1", "--format=%at", join(dirPath, child)]) * 1000,
             });
           }
-          const relativepath = relative(dirRoot, dirPath);
+          const relativepath = normalizePath(relative(dirRoot, dirPath));
           const docFile = files.find(file => file.type === "doc");
           let additions = {};
           if (docFile) {
