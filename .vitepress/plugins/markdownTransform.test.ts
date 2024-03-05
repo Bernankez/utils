@@ -49,7 +49,7 @@ tryUntilMounted(() => {
 
 describe("markdownTransform", () => {
   it("", () => {
-    expect(transform(funcWithNodeEnv, "functions/resolvePath/index.md")).toMatchInlineSnapshot(`
+    expect(transform(funcWithNodeEnv, "functions/node/resolvePath/index.md")).toMatchInlineSnapshot(`
       "
       ---
       category: Processing
@@ -78,6 +78,44 @@ describe("markdownTransform", () => {
       ## Source
 
       <a href=\\"https://github.com/Bernankez/utils/blob/master/functions/node/resolvePath/index.ts\\" target=\\"_blank\\" style=\\"text-decoration: none\\">Source</a> • <a href=\\"https://github.com/Bernankez/utils/blob/master/functions/node/resolvePath/index.md\\" target=\\"_blank\\" style=\\"text-decoration: none\\">Docs</a> • <a href=\\"https://github.com/Bernankez/utils/blob/master/functions/node/resolvePath/index.test.ts\\" target=\\"_blank\\" style=\\"text-decoration: none\\">Tests</a>
+      "
+    `);
+
+    expect(transform(funcWithVueEnv, "functions/vue/tryUntilMounted/index.md")).toMatchInlineSnapshot(`
+      "
+      ---
+      category: Vue
+      ---
+
+      # tryUntilMounted
+
+      <FunctionInfo fn=\\"tryUntilMounted\\"/>
+
+      <script setup>
+      import Demo from \\"./demo.vue\\";
+      </script>
+
+      ## Demo
+
+      <DemoWrapper source=https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/demo.vue>
+        <Demo />
+      </DemoWrapper>
+
+      ## Usage
+
+      \`\`\`vue
+      <script setup >
+      import { tryUntilMounted } from \\"@bernankez/utils/vue\\";
+
+      tryUntilMounted(() => {
+        // Will excute on mounted
+      });
+      </script>
+      \`\`\`
+
+      ## Source
+
+      <a href=\\"https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/index.ts\\" target=\\"_blank\\" style=\\"text-decoration: none\\">Source</a> • <a href=\\"https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/demo.vue\\" target=\\"_blank\\" style=\\"text-decoration: none\\">Demo</a> • <a href=\\"https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/index.md\\" target=\\"_blank\\" style=\\"text-decoration: none\\">Docs</a>
       "
     `);
   });
