@@ -256,13 +256,13 @@
         "type": "doc",
         "filename": "index.md",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/narrow/index.md",
-        "lastUpdated": 0
+        "lastUpdated": 1709621244000
       },
       {
         "type": "lib",
         "filename": "index.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/narrow/index.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1709621244000
       }
     ]
   },
