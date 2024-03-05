@@ -49,74 +49,70 @@ tryUntilMounted(() => {
 
 describe("markdownTransform", () => {
   it("", () => {
-    expect(transform(funcWithNodeEnv, "functions/node/resolvePath/index.md")).toMatchInlineSnapshot(`
-      "
-      ---
-      category: Processing
-      ---
+    expect(transform(funcWithNodeEnv, "functions/node/resolvePath/index.md")).toBe(`
+---
+category: Processing
+---
 
-      # masking
+# masking
 
-      <FunctionInfo fn=\\"resolvePath\\"/>
+<FunctionInfo fn="resolvePath"/>
 
-      String masking.
+String masking.
 
-      ## Usage
+## Usage
 
-      \`\`\`ts
-      import { masking } from \\"@bernankez/utils\\";
+\`\`\`ts
+import { masking } from "@bernankez/utils";
 
-      const pkg = \\"@bernankez/utils\\";
+const pkg = "@bernankez/utils";
 
-      const masked = masking(pkg, [3, -3]); // \\"@be**********ils\\"
+const masked = masking(pkg, [3, -3]); // "@be**********ils"
 
-      const masked1 = masking(pkg, [[2, 4], [6, 8]]); // @b**na**ez/utils
+const masked1 = masking(pkg, [[2, 4], [6, 8]]); // @b**na**ez/utils
 
-      const masked2 = masking(pkg, [3, -3], \\"-\\"); // @be----------ils
-      \`\`\`
+const masked2 = masking(pkg, [3, -3], "-"); // @be----------ils
+\`\`\`
 
-      ## Source
+## Source
 
-      <a href=\\"https://github.com/Bernankez/utils/blob/master/functions/node/resolvePath/index.ts\\" target=\\"_blank\\" style=\\"text-decoration: none\\">Source</a> • <a href=\\"https://github.com/Bernankez/utils/blob/master/functions/node/resolvePath/index.md\\" target=\\"_blank\\" style=\\"text-decoration: none\\">Docs</a> • <a href=\\"https://github.com/Bernankez/utils/blob/master/functions/node/resolvePath/index.test.ts\\" target=\\"_blank\\" style=\\"text-decoration: none\\">Tests</a>
-      "
-    `);
+<a href="https://github.com/Bernankez/utils/blob/master/functions/node/resolvePath/index.ts" target="_blank" style="text-decoration: none">Source</a> • <a href="https://github.com/Bernankez/utils/blob/master/functions/node/resolvePath/index.md" target="_blank" style="text-decoration: none">Docs</a> • <a href="https://github.com/Bernankez/utils/blob/master/functions/node/resolvePath/index.test.ts" target="_blank" style="text-decoration: none">Tests</a>
+`);
 
-    expect(transform(funcWithVueEnv, "functions/vue/tryUntilMounted/index.md")).toMatchInlineSnapshot(`
-      "
-      ---
-      category: Vue
-      ---
+    expect(transform(funcWithVueEnv, "functions/vue/tryUntilMounted/index.md")).toBe(`
+---
+category: Vue
+---
 
-      # tryUntilMounted
+# tryUntilMounted
 
-      <FunctionInfo fn=\\"tryUntilMounted\\"/>
+<FunctionInfo fn="tryUntilMounted"/>
 
-      <script setup>
-      import Demo from \\"./demo.vue\\";
-      </script>
+<script setup>
+import Demo from "./demo.vue";
+</script>
 
-      ## Demo
+## Demo
 
-      <DemoWrapper source=https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/demo.vue>
-        <Demo />
-      </DemoWrapper>
+<DemoWrapper source=https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/demo.vue>
+  <Demo />
+</DemoWrapper>
 
-      ## Usage
+## Usage
 
-      \`\`\`vue
-      <script setup >
-      import { tryUntilMounted } from \\"@bernankez/utils/vue\\";
+\`\`\`vue
+<script setup >
+import { tryUntilMounted } from "@bernankez/utils/vue";
 
-      tryUntilMounted(() => {
-        // Will excute on mounted
-      });
-      </script>
-      \`\`\`
+tryUntilMounted(() => {
+  // Will excute on mounted
+});
+</script>
+\`\`\`
 
-      ## Source
+## Source
 
-      <a href=\\"https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/index.ts\\" target=\\"_blank\\" style=\\"text-decoration: none\\">Source</a> • <a href=\\"https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/demo.vue\\" target=\\"_blank\\" style=\\"text-decoration: none\\">Demo</a> • <a href=\\"https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/index.md\\" target=\\"_blank\\" style=\\"text-decoration: none\\">Docs</a>
-      "
-    `);
+<a href="https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/index.ts" target="_blank" style="text-decoration: none">Source</a> • <a href="https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/demo.vue" target="_blank" style="text-decoration: none">Demo</a> • <a href="https://github.com/Bernankez/utils/blob/master/functions/vue/tryUntilMounted/index.md" target="_blank" style="text-decoration: none">Docs</a>
+`);
   });
 });
