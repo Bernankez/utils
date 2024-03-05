@@ -243,6 +243,30 @@
     ]
   },
   {
+    "path": "functions/core/narrow",
+    "name": "narrow",
+    "doc": "https://utils.keke.cc/functions/core/narrow/",
+    "entry": "core",
+    "additions": {
+      "category": "Type",
+      "alias": "n"
+    },
+    "files": [
+      {
+        "type": "doc",
+        "filename": "index.md",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/narrow/index.md",
+        "lastUpdated": 0
+      },
+      {
+        "type": "lib",
+        "filename": "index.ts",
+        "source": "https://github.com/Bernankez/utils/blob/master/functions/core/narrow/index.ts",
+        "lastUpdated": 0
+      }
+    ]
+  },
+  {
     "path": "functions/node/resolvePath",
     "name": "resolvePath",
     "doc": "https://utils.keke.cc/functions/node/resolvePath/",

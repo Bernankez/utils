@@ -7,3 +7,4 @@ export * from "./Awaitable";
 export * from "./makeDestructurable";
 export * from "./awaitPromise";
 export * from "./log";
+export * from "./narrow";
