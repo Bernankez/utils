@@ -5,32 +5,22 @@ const names = [
   "masking",
   "resolvePath",
   "tryUntilMounted",
-  "Prettier",
 ];
 
 const resolved = [
   "@bernankez/utils",
   "@bernankez/utils/node",
   "@bernankez/utils/vue",
-  "@bernankez/utils",
 ];
 
-const types = [
-  false,
-  undefined,
-  undefined,
-  true,
-];
-
-const resolver = UtilsResolver().resolve;
+const resolver = UtilsResolver();
 
 describe("resolver", () => {
   it("resolve import entry", () => {
     names.forEach((name, i) => {
       expect(resolver(name)).toEqual({
-        name,
+        module: name,
         from: resolved[i],
-        // type: types[i],
       });
     });
   });
