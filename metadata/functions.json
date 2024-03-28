@@ -58,13 +58,13 @@
         "type": "doc",
         "filename": "index.md",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/RequiredSome/index.md",
-        "lastUpdated": 0
+        "lastUpdated": 1711621001000
       },
       {
         "type": "lib",
         "filename": "index.ts",
         "source": "https://github.com/Bernankez/utils/blob/master/functions/core/RequiredSome/index.ts",
-        "lastUpdated": 0
+        "lastUpdated": 1711621001000
       }
     ]
   },
