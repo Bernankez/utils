@@ -3,6 +3,7 @@ export * from "./isDefined";
 export * from "./isNumber";
 export * from "./masking";
 export * from "./Prettier";
+export * from "./RequiredSome";
 export * from "./Awaitable";
 export * from "./makeDestructurable";
 export * from "./awaitPromise";
